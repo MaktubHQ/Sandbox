@@ -1,16 +1,376 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: white;
+  color: #333;
+  font-family: "Nunito";
+}
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+}
+a :active{
+  color:#00FFA3
+}
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+nav {
+  margin: 10px auto 80px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border-bottom: 1px solid #ddd;
+}
+nav a {
+  margin-left: 12px;
+  padding: 25px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+nav .logo {
+  margin-right: auto;
+}
+nav .wallet {
+  margin-left: auto;
+}
+footer {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+  color: #777;
+  border-top: 1px solid #eaeaea;
+}
+
+.hero{
+  position: relative;
+  font-size: 50px;
+  line-height: 115%;
+  margin-bottom: 24px;
+  font-size: 24px;
+  line-height: 150%;
+  /* max-width: 484px; */
+  margin-bottom: 14px;
+}
+.images{
+  width: 750px!important;
+}
+.herocontainer{
+  position: relative;
+  color: black;
+  margin: auto;
+width: 100%;
+border: 3px solid transparent;
+padding: 10px;
+}
+.heroinformation{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 46px;
+  border: 3px solid transparent;
+  padding: 20px;
+  display: flex;
+  
+  border: 3px solid transparent;
+  padding: 30px;
+}
+.herotitle{
+  font-size: 50px;
+  line-height: 115%;
+  margin-bottom: 24px;
+}
+.herotext{
+  font-size: 24px;
+  line-height: 150%;
+  max-width: 484px;
+  margin-bottom: 14px;
+}
+.herotextred{
+  color: white;
+  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+.heroimg{
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  z-index: 5;
+  right: 10%;
+  bottom: -80px;
+  display: block;
+}
+.herobackground{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  right: 20%;
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  border: 2px solid transparent;
+}  
+svg {
+  width: inherit;
+  height: inherit;
+ }
+
+ .button{
+  color: black;
+  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  padding: 15px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 25px;
+  font-weight: 900;
+}
+
+.button a:hover{
+  background: linear-gradient(#00FFA3, #03E1FF);
+  color: white;
+}
+
+.hero a{
+  color: white;
+  text-align: center;
+  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  padding: 15px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 25px;
+  font-weight: 900;
+}
+
+
+.authed-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.header {
+  margin: 0;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+.sub-text {
+  font-size: 25px;
+  color: white;
+}
+
+.gradient-text {
+  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-button {
+  height: 45px;
+  border: 0;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+.cta-button a:hover{
+  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  color: white;
 }
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.Tabs {
+  width: auto;
+  height: auto;
+  min-height: 400px;
+  background: black;
+  margin: 3.5rem auto 1.5rem;
+  padding: 2rem 1rem;
+  color: #E8F0F2;
+  @media (max-width: 769px) {
+   padding: 2rem 0;
+  }
+ }
+
+ ul.nav {
+  width: 60%;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 2rem;
+  padding-left: 0px;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+}
+ul.nav li {
+  width: 50%;
+  padding: 1rem;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.7s;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+ul.nav li:nth-child(2) {
+  border-radius: 0;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+ul.nav li:hover {
+  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  color: black;
+}
+ul.nav li.active {
+  background: white;
+  color: black;
+}
+
+
+
+   
+.FirstTab p,
+.SecondTab p {
+  font-size: 2rem;
+  text-align: center;
+  display:block;
+    margin:auto;
+}
+
+.images {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%!important;
+}
+
+.moreinfo{
+  display:flex; flex-direction:row;
+}
+.arrow{
+  max-width: 10%;
+  max-height: auto!important;
+}
+
+.footer-text{
+  color: black;
+}
+
+a:hover{
+  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  color: white;
+  
+}
+nav a:hover{
+  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+nav a:active{
+  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
+
+.footer-container{
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/ 
+  height: 40px;  /* Height of the footer */
+ background: whitesmoke;
+ opacity: 0.7;
+ text-align: center;
+}
+
+.footer-container a:hover{
+  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.connect-wallet-button {
+  color: white;
+  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+  
+}
+.connect-wallet-button :hover{
+  color: white;
+  background: linear-gradient(#00FFA3, #03E1FF);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+}
+
+
+  #name {
+    width: 30%;
+    height: 25px;
+  }
+  #contact{
+    width: 20%;
+    height: 30px;
+  }
+  #jobdescription{
+    width: 50%;
+    height: 200px;
+  }
+.postbutton{
+  padding: 10px;
+
+  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+  border-radius: 10px;
+  height: 45px;
+  border: 0;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+.postbutton:hover{
+  color: black;
+}
+.cta-button.connect-wallet-button:hover{
+  color: black;
+  background: linear-gradient(#00FFA3, #03E1FF);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
 }
