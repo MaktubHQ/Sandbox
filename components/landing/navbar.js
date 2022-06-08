@@ -30,6 +30,12 @@ const Navbar = () => {
 
                 </Link>
 
+                <Link href='/dbpage'>
+                    
+            <a>DB</a>
+
+                </Link>
+
 
             </div>
             <div className="wallet">

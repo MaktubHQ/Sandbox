@@ -15,7 +15,7 @@ const JobListingForm = (
     >
         
         
-      <label htmlFor="name">Job Title: *</label>
+      <label htmlFor="name">Job Title:* </label>
       <input
         id="name"
         name="name"
@@ -24,7 +24,7 @@ const JobListingForm = (
       />
       <br></br>
 <div className="role">
-<label htmlFor="role">Role: *</label>
+<label htmlFor="role">Role:* </label>
       <input id="role" type="radio" name="role" value="Dev"/>
       <label htmlFor="role"> Dev  </label>
       <input type="radio" id="role" name="role" value="Designer"/>
@@ -35,7 +35,7 @@ const JobListingForm = (
 </div>
 
 <div className="contacts">
-<label htmlFor="email"> E-mail Address: *</label>
+<label htmlFor="email"> E-mail Address:* </label>
       <input id="contact" type="email" name="email" required />
 
 <label htmlFor="discord"> Discord ID: </label>
@@ -52,15 +52,25 @@ const JobListingForm = (
 
       
 <div className="jobinfo">
-<label htmlFor="budget">Budget: *</label>
+<label htmlFor="budget">Budget:* </label>
       <input id="contact" type="text" name="budget" required />
       <br></br>
 
-      <label htmlFor="message">Job Description: *</label>
+      <label htmlFor="message">Job Description:* </label>
       <textarea id="jobdescription" name="jobdescription" required></textarea>
 
 
 </div>
+<div>
+<label for="image">Choose a listing photo: </label>
+
+<input type="file"
+       id="avatar" name="avatar"
+       accept="image/png, image/jpeg" />
+</div>
+<br></br>
+<hr></hr>
+<br></br>
       
 
       <button type="submit" className="postbutton">Post Job</button>
@@ -76,7 +86,9 @@ const SecondTab = () => {
             <div>
             <h1>Post a Job Listing</h1>
             </div>
+            <br></br>
             <hr></hr>
+            <br></br>
             <div>
             {JobListingForm}
             </div>
