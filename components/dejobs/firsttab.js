@@ -4,7 +4,7 @@ function FirstTab({ joblist }) {
     <div className="container">
       <div>
         {console.log(joblist)}
-        {joblist.map((job, index) => {
+        {joblist?.map((job, index) => {
           return (
             <div className="FirstTab">
             <div style={{
