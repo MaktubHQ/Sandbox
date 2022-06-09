@@ -1,8 +1,10 @@
 import clientPromise from "../utils/mongodb";
-
+import Navbar from '../components/landing/navbar'
 export default function Home({ joblist }) {
   return (
+    
     <div className="container">
+      <Navbar />
       <div>
         {joblist.map((job, index) => {
           return (

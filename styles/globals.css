@@ -378,3 +378,63 @@ nav a:active{
 .jobTitle{
   color: red;
 }
+
+.gallery-wrapper {
+  width: 100vw;
+  position: relative;
+}
+
+.gallery {
+  background-color: hsl(217, 90%, 88%);
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.gallery-nft-row {
+  width: 640px;
+  height: auto;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 10px;
+  gap: 50px;
+}
+
+.gallery-nft {
+  background-color: hsl(215, 67%, 96%);
+  width: 300px;
+  height: auto;
+  /* border: 1px solid white; */
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+  padding: 1.5rem 1.6rem 2rem;
+  padding: 50px;
+}
+.img-container {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.gallery-nft img {
+  
+  /* width: 100px;
+  height: 100px; */
+  position: relative;
+  margin:  auto;
+  height: 250px;
+  width: 250px;
+  max-width: 300px;
+}
+.gallery-nft-name{
+  color:rgb(26, 15, 15);
+  margin: 1.4rem 0 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+}

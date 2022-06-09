@@ -1,13 +1,27 @@
 
-function FirstTab({ joblist }) {
+import useSWR from 'swr'
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+function FirstTab() {
+  const { data, error } = useSWR('/api/posts', fetcher)
+
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
+
   return (
     <div className="container">
       <div>
-        {console.log(joblist)}
-        {joblist?.map((job, index) => {
+        {console.log(data)}
+        {data.data.map((job, index) => {
           return (
-            <div className="FirstTab">
-            <div style={{
+
+
+
+
+            
+            <div className="gallery">
+            <div className='gallery-list' style={{
             display: "flex",
             justifyContent: "center",
           }}>
@@ -19,37 +33,25 @@ function FirstTab({ joblist }) {
             </div>
   
             </div>
-          
-    
-          <br></br>
-          <hr></hr>
-          <br></br>
-    
-         
-    
-          
-          <p>Coming soon 😉</p>
           {/* First tab content will go here */}
         </div>
             
           );
         })}
+
+          <br></br>
+          <hr></hr>
+          <br></br>
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+          }}>
+          <p>Coming soon 😉</p>
+          </div>
+          
       </div>
     </div>
   );
-}
-
-export async function getServerSideProps(context) {
-  const client = await clientPromise;
-
-  const db = client.db("dejobs");
-
-  let joblist = await db.collection("joblist").find({}).toArray();
-  joblist = JSON.parse(JSON.stringify(joblist));
-
-  return {
-    props: { joblist },
-  };
 }
 
 export default FirstTab
