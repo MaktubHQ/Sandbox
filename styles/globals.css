@@ -11,7 +11,7 @@ a {
   font-size: 25px;
 }
 a :active{
-  color:#00FFA3
+  color:black;
 }
 .content {
   max-width: 960px;
@@ -127,7 +127,7 @@ svg {
 
  .button{
   color: black;
-  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
   padding: 15px;
   width: 80%;
   margin: 0 auto;
@@ -136,7 +136,7 @@ svg {
 }
 
 .button a:hover{
-  background: linear-gradient(#00FFA3, #03E1FF);
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
   color: white;
 }
 
@@ -191,8 +191,8 @@ svg {
   color: white;
 }
 .cta-button a:hover{
-  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
-  color: white;
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  color: black;
 }
 
 * {
@@ -205,10 +205,10 @@ svg {
   width: auto;
   height: auto;
   min-height: 400px;
-  background: black;
+  background-color: white;
   margin: 3.5rem auto 1.5rem;
   padding: 2rem 1rem;
-  color: #E8F0F2;
+  color: black;
   @media (max-width: 769px) {
    padding: 2rem 0;
   }
@@ -243,15 +243,18 @@ ul.nav li:nth-child(2) {
   border-top-right-radius: 2rem;
 }
 ul.nav li:hover {
-  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
   color: black;
 }
 ul.nav li.active {
-  background: white;
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
   color: black;
 }
 
-
+li.passive {
+  background: -webkit-linear-gradient(left, white, #C9F5FA);
+  color: black;
+}
 
    
 .FirstTab p,
@@ -282,19 +285,19 @@ ul.nav li.active {
 }
 
 a:hover{
-  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
   color: white;
   
 }
 nav a:hover{
-  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
   color: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
 }
 nav a:active{
-  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
   color: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -321,15 +324,15 @@ nav a:active{
 }
 
 .connect-wallet-button {
-  color: white;
-  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  color: black;
+  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
   
 }
 .connect-wallet-button :hover{
   color: white;
-  background: linear-gradient(#00FFA3, #03E1FF);
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
 }
@@ -369,14 +372,21 @@ nav a:active{
   color: black;
 }
 .cta-button.connect-wallet-button:hover{
-  color: black;
-  background: linear-gradient(#00FFA3, #03E1FF);
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
+  color: black;
 }
 
 .jobTitle{
-  color: red;
+  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery-wrapper {
@@ -385,13 +395,16 @@ nav a:active{
 }
 
 .gallery {
-  background-color: hsl(217, 90%, 88%);
+  background-color: #202124;
+  
   width: auto;
   height: auto;
   display: flex;
   flex-flow: column;
   align-items: center;
   overflow-y: auto;
+  padding-top: 20px;
+
 }
 
 .gallery-nft-row {
@@ -437,4 +450,28 @@ nav a:active{
   margin: 1.4rem 0 0.75rem;
   font-size: 1.4rem;
   font-weight: 400;
+}
+.jobtext{
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .outlet, .container{
+  background-color: #eaeaea;
+} */
+
+.linebreak{
+  width: 100vw;
+  margin: auto;
+}
+.galleryButton{
+  text-align: center; 
+  margin: auto;
+  display: flex;
+  background-color: #202124;
+  color: #333;
+  font-family: "Nunito";
+  padding: 10px;
 }

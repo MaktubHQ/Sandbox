@@ -25,13 +25,13 @@ const DeJobs = () => {
       <div className="Tabs">
       <ul className="nav">
         <li
-          className={activeTab === "tab1" ? "active" : ""}
+          className={activeTab === "tab1" ? "active" : "passive"}
           onClick={handleTab1}
         >
           DeJob Listings
         </li>
         <li
-          className={activeTab === "tab2" ? "active" : ""}
+          className={activeTab === "tab2" ? "active" : "passive"}
           onClick={handleTab2}
         >
           Post DeJob

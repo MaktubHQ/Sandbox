@@ -13,11 +13,24 @@ function GalleryJob() {
     return (
         <div className="gallery-nft">
             {data.data.map((job, index) => {
+                
           return (
+              
               <div className="card" key={index}>
-              <h2 className="jobTitle">{job.title}</h2>
+                   <button onClick={() => setShowModal(true)}>
+                       
+            <h2 className="jobTitle">{job.title}</h2>
               <p>{job.role}</p>
               <p>{job.budget}</p>
+                       
+                       </button>
+                    <Modal
+                    onClose={() => setShowModal(false)}
+                    show={showModal}
+                    >
+          Hello from the modal!
+        </Modal>
+              
             </div>
             
           );
