@@ -28,13 +28,13 @@ const DeJobs = () => {
           className={activeTab === "tab1" ? "active" : "passive"}
           onClick={handleTab1}
         >
-          DeJob Listings
+          Maktub Job Listings
         </li>
         <li
           className={activeTab === "tab2" ? "active" : "passive"}
           onClick={handleTab2}
         >
-          Post DeJob
+          Post Maktub Job
         </li>
       </ul>
  

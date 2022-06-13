@@ -8,12 +8,12 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">DeJobs Manager</span>
+            <span className="herotitle">BMO Jobz</span>
           </h1>
           <p className="herotext">
             Need diamond hands in your project?
           </p>
-          <p className="herotextred">Find and fill jobs within our community. Coming soon!</p>😉
+          <p className="herotextred">Network with other BMOs. Coming soon!</p>😉
                 </div>
           <div className='float-child'>
           <Image src="/contract.png" alt="Contract" width='500px' height='500px'/>
@@ -27,9 +27,9 @@ const Hero = () => (
               </div>
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">DeJob Listings</span>
-          </h1>
-          <p className="herotextred">View all job posted by DeGods.</p>
+            <span className="herotitle">Job Listings for BMO</span>
+          </h1> 
+          <p className="herotextred">View all jobs posted by community members.</p>
           <br></br>
           <Link href="/demo" style={{ textDecoration: 'none'}} className="button">Demo</Link>
           </div>
@@ -42,12 +42,12 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">Post DeJob</span>
+            <span className="herotitle">Post Job to BMO</span>
           </h1>
-          <p className="herotextred">Post a job to DeGods community.</p>
+          <p className="herotextred">Post a job to our community.</p>
           <br></br>
           
-          <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">DeJobs</Link>
+          <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">BMO Jobs</Link>
           </div>
           <div className='float-child'>
           <Image src='/postjob.png' alt="Post a Job" className="images" width='800px' height='500px'/>

@@ -26,7 +26,7 @@ const Navbar = () => {
             
                 <Link href='/dejobs'>
                     
-            <a>DeJobs</a>
+            <a>BMO Jobs</a>
 
                 </Link>
 
