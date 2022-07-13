@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>BMO by MaktubLabs</title>
+        <title>Deal by MaktubLabs</title>
         <meta name="description" content="Built by MaktubLabs" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -8,12 +8,12 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">BMO Jobz</span>
+            <span className="herotitle">Deal 🤝 </span>
           </h1>
           <p className="herotext">
             Need diamond hands in your project?
           </p>
-          <p className="herotextred">Network with other BMOs. Coming soon!</p>😉
+          <p className="herotextred">Network with other 💎 🙌. Coming soon!</p>😉
                 </div>
           <div className='float-child'>
           <Image src="/contract.png" alt="Contract" width='500px' height='500px'/>
@@ -27,7 +27,7 @@ const Hero = () => (
               </div>
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">Job Listings for BMO</span>
+            <span className="herotitle">Job Listings</span>
           </h1> 
           <p className="herotextred">View all jobs posted by community members.</p>
           <br></br>
@@ -42,12 +42,12 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">Post Job to BMO</span>
+            <span className="herotitle">Post a Job</span>
           </h1>
-          <p className="herotextred">Post a job to our community.</p>
+          <p className="herotextred">Post a deal to our community.</p>
           <br></br>
           
-          <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">BMO Jobs</Link>
+          <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">Active Deals</Link>
           </div>
           <div className='float-child'>
           <Image src='/postjob.png' alt="Post a Job" className="images" width='800px' height='500px'/>
