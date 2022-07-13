@@ -5,6 +5,7 @@ import FirstTab from "../components/dejobs/firsttab";
 import SecondTab from "../components/dejobs/secondtab";
 import styles from '../styles/Home.module.css'
 
+
 const DeJobs = () => {
     const [activeTab, setActiveTab] = useState("tab1");
     //  Functions to handle Tab Switching

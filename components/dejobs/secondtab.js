@@ -62,7 +62,7 @@ const JobListingForm = (
 
 </div>
 <div>
-<label for="image">Choose a listing photo: </label>
+<label htmlFor="image">Choose a listing photo: </label>
 
 <input type="file"
        id="avatar" name="avatar"
