@@ -11,9 +11,9 @@ const Hero = () => (
             <span className="herotitle">Deal 🤝 </span>
           </h1>
           <p className="herotext">
-            Need diamond hands in your project?
+            Need diamond hands on your team?
           </p>
-          <p className="herotextred">Network with other 💎 🙌. Coming soon!</p>😉
+          <p className="herotextred">Network with your 💎 🙌 homies. Coming soon!</p>
                 </div>
           <div className='float-child'>
           <Image src="/contract.png" alt="Contract" width='500px' height='500px'/>
@@ -42,9 +42,9 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">Post a Job</span>
+            <span className="herotitle">Propose a Job</span>
           </h1>
-          <p className="herotextred">Post a deal to our community.</p>
+          <p className="herotextred">Propose a partnership to our community.</p>
           <br></br>
           
           <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">Active Deals</Link>

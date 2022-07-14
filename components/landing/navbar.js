@@ -1,10 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import ConnectWallet from "./connectwallet";
+
 
 
 const Navbar = () => {
   
+let id = ""
+      if (ConnectWallet.showProfile){
+        id = "show"
+      }
+
     return (
         <nav>
             <div className="logo">
@@ -30,6 +37,12 @@ const Navbar = () => {
 
                 </Link>
 
+
+                <Link className={ConnectWallet.showProfile ? "showProfile" : "hideProfile"} href='/profile'>
+                    
+                    <a>Profile</a>
+        
+                        </Link>
 
             </div>
             <div className="wallet">

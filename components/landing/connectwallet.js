@@ -5,6 +5,16 @@ import React, { useEffect, useState } from 'react';
 const ConnectWallet = () => {
   // State
   const [walletAddress, setWalletAddress] = useState(null);
+  const [showProfile, setShowProfile] = useState(false)
+    const handleHideProfile = () => setShowProfile(false)
+    const handleShowProfile = () => setShowProfile(true)
+
+    const triggerProfile = {
+        onClick: (e, row) => {
+          applysetModalInfo(row)
+          applytoggleTrueFalse()
+        }
+      }
 
   // Actions
   const checkIfWalletIsConnected = async () => {
@@ -15,6 +25,7 @@ const ConnectWallet = () => {
         if (solana.isPhantom) {
           console.log('Phantom wallet found!');
           const response = await solana.connect({ onlyIfTrusted: true });
+          handleShowProfile()
           console.log(
             'Connected with Public Key:',
             response.publicKey.toString()

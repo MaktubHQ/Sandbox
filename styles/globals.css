@@ -483,3 +483,7 @@ nav a:active{
   text-align: center;
   margin: auto;
 }
+
+.hideProfile{
+  display: none;
+}
