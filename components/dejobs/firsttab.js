@@ -4,6 +4,7 @@ import useSWR from 'swr'
 import { Modal, Button } from "react-bootstrap";
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
 // es5 
 
@@ -43,14 +44,16 @@ function FirstTab() {
 
   const columns = [{
   dataField: 'role',
-  text: 'Job Title'
+  text: 'Job Title',
+  filter: textFilter()
 }, {
   dataField: 'title',
   text: 'Details'
 }, {
   dataField: 'budget',
   text: 'Pay'
-}];
+},
+];
 
 const rowEvents = {
   onClick: (e, row) => {
@@ -111,7 +114,7 @@ const ApplyModal = () => {
       <form
   name="job-listing-form"
   method="POST"
-  action="contact/?success=true"
+  action="/api/profileapplications"
 >
     
 
@@ -181,7 +184,7 @@ const ApplyModal = () => {
       <div className='container'>
         {console.log(data)}
        
-        <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} />
+        <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} filter={ filterFactory()} />
 
         {show ? <ModalContent /> : null}
         {applyshow ? <ApplyModal /> : null}

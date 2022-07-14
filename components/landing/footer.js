@@ -1,19 +1,27 @@
 const TWITTER_HANDLE = 'maktublabs';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+import Image from "next/image";
+import styles from '../../styles/Home.module.css'
+import maktub from '../../public/maktub.png'
 
 
 const Footer = () => {
 
     return (
-            <div className="footer-container">
-          {/* <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} /> */}
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`built by @${TWITTER_HANDLE}`}</a>
-        </div>
+
+<footer className={styles.footer}>
+<a
+  href="https://twitter.com/maktublabs"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Powered by{' '}
+  <span className={styles.logo}>
+    <Image src={maktub} alt="Maktub" width={75} height={75} />
+  </span>
+</a>
+</footer>
+        
     );
 };
 

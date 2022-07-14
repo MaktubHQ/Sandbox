@@ -10,19 +10,20 @@ const JobListingForm = (
 
     <form
       name="job-listing-form"
-      method="POST"
-      action="contact/?success=true"
+      method="post"
+      action="/api/posts"
     >
         
         
-      <label htmlFor="name">Job Title:* </label>
+      <label htmlFor="title">Job Title:* </label>
       <input
-        id="name"
-        name="name"
+        id="title"
+        name="title"
         required
         type="text"
       />
       <br></br>
+      
 <div className="role">
 <label htmlFor="role">Role:* </label>
       <input id="role" type="radio" name="role" value="Dev"/>

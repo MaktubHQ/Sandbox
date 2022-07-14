@@ -4,6 +4,8 @@ import useSWR from 'swr'
 import { Modal, Button } from "react-bootstrap";
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import ToolkitProvider from 'react-bootstrap-table2-toolkit';
 
 // es5 
 
@@ -15,7 +17,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function SecondTab() {
-  const { data, error } = useSWR('/api/posts', fetcher)
+  const { data, error } = useSWR('/api/profileapplications', fetcher)
 
   const [modalInfo, setModalInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -42,15 +44,16 @@ function SecondTab() {
   }
 
   const columns = [{
-  dataField: 'role',
-  text: 'Job Title'
+  dataField: 'intro',
+  text: 'Introduction'
 }, {
-  dataField: 'title',
-  text: 'Details'
+  dataField: 'discord',
+  text: 'Discord'
 }, {
-  dataField: 'budget',
-  text: 'Pay'
-}];
+  dataField: 'twitter',
+  text: 'Twitter'
+}
+];
 
 const rowEvents = {
   onClick: (e, row) => {
@@ -78,17 +81,20 @@ const ModalContent = () => {
 
         <Modal.Body>
           <p>
-          {modalInfo.title}
+          {modalInfo.intro}
           </p>
           <p>
-          {"Budget is " + modalInfo.budget}
+          {"Discord is " + modalInfo.discord}
+          </p>
+          <p>
+          {"Twitter is " + modalInfo.twitter}
           </p>
         
            </Modal.Body>
 
         <Modal.Footer> 
 
-          <Button onClick={applyhandleShow} variant="primary">Apply</Button>
+          {/* <Button onClick={applyhandleShow} variant="primary">Contact for update</Button> */}
         </Modal.Footer>
 
 
@@ -113,7 +119,7 @@ const ApplyModal = () => {
   method="POST"
   action="contact/?success=true"
 >
-    
+
 
 <div className="contacts">
 <label htmlFor="email"> E-mail Address:* </label>
@@ -176,12 +182,26 @@ const ApplyModal = () => {
   if (!data) return <div>Loading...</div>
 
 
+  var showHide = false;
+
+
+    if (data.data.wallet == "idk"){
+    showHide = true
+    }
+    else{
+      showHide = false
+    }
+  
 
   return (
       <div className='container'>
         {console.log(data)}
+
+        
        
-        <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} />
+        <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} filter={ filterFactory()} />
+
+        
 
         {show ? <ModalContent /> : null}
         {applyshow ? <ApplyModal /> : null}

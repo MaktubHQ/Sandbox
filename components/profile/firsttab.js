@@ -4,6 +4,8 @@ import useSWR from 'swr'
 import { Modal, Button } from "react-bootstrap";
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import ToolkitProvider from 'react-bootstrap-table2-toolkit';
 
 // es5 
 
@@ -15,14 +17,15 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function FirstTab() {
-  const { data, error } = useSWR('/api/posts', fetcher)
+  const { data, error } = useSWR('/api/profilelistings', fetcher)
 
   const [modalInfo, setModalInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
   const [applymodalInfo, applysetModalInfo] = useState([]);
   const [applyshowModal, applysetShowModal] = useState(false);
-
+  
+  const [storeID, setID] = useState([]);
 
   const [show, setShow] = useState(false)
 
@@ -50,7 +53,13 @@ function FirstTab() {
 }, {
   dataField: 'budget',
   text: 'Pay'
-}];
+},
+, {
+  dataField: '_id',
+  text: 'ID',
+  hidden: true
+}
+];
 
 const rowEvents = {
   onClick: (e, row) => {
@@ -63,6 +72,7 @@ const rowEvents = {
 
 const triggerApply = {
   onClick: (e, row) => {
+    console.log(row)
     applysetModalInfo(row)
     applytoggleTrueFalse()
   }
@@ -88,7 +98,7 @@ const ModalContent = () => {
 
         <Modal.Footer> 
 
-          <Button onClick={applyhandleShow} variant="primary">Apply</Button>
+          <Button onClick={applyhandleShow} variant="primary">Edit Listing</Button>
         </Modal.Footer>
 
 
@@ -105,54 +115,77 @@ const ApplyModal = () => {
 
     <Modal.Header closeButton>
 
-      <Modal.Title>{applymodalInfo.role} Application</Modal.Title>
-
+      <Modal.Title>{applymodalInfo.role} Edit Listing</Modal.Title>
+      {console.log(modalInfo.id)}
       <Modal.Body>
       <form
-  name="job-listing-form"
-  method="POST"
-  action="contact/?success=true"
->
-    
+      name="job-listing-form"
+      method="PUT"
+      action="/api/posts"
+    >
+        <input type="hidden" name="jobId" value={applymodalInfo._id} />
+        
+      <label htmlFor="title">Job Title:* </label>
+      <input
+        id="title"
+        name="title"
+        required
+        type="text"
+      />
+      <br></br>
+      
+<div className="role">
+<label htmlFor="role">Role:* </label>
+      <input id="role" type="radio" name="role" value="Dev"/>
+      <label htmlFor="role"> Dev  </label>
+      <input type="radio" id="role" name="role" value="Designer"/>
+      <label htmlFor="role"> Designer  </label>
+      <input type="radio" id="role" name="role" value="Marketer"/>
+      <label htmlFor="role"> Marketer </label><br></br>
+
+</div>
 
 <div className="contacts">
 <label htmlFor="email"> E-mail Address:* </label>
-  <input id="contact" type="email" name="email" required />
+      <input id="contact" type="email" name="email" required />
 
 <label htmlFor="discord"> Discord ID: </label>
-  <input id="contact" type="text" name="discord"  />
+      <input id="contact" type="text" name="discord"  />
 
-  <label htmlFor="twitter"> Twitter: </label>
-  <input id="contact" type="text" name="twitter"  />
+      <label htmlFor="twitter"> Twitter: </label>
+      <input id="contact" type="text" name="twitter"  />
 
-  
-  <br></br>
+      
+      <br></br>
 
 </div>
- 
+     
 
-  
+      
 <div className="jobinfo">
+<label htmlFor="budget">Budget:* </label>
+      <input id="contact" type="text" name="budget" required />
+      <br></br>
 
-  <label htmlFor="message">Introduction:* </label>
-  <textarea id="intro" name="intro" required></textarea>
+      <label htmlFor="message">Job Description:* </label>
+      <textarea id="jobdescription" name="jobdescription" required></textarea>
 
 
 </div>
 <div>
-<label htmlFor="image">Upload Resume/CV: </label>
+<label htmlFor="image">Choose a listing photo: </label>
 
 <input type="file"
-   id="avatar" name="avatar"
-   accept="application/pdf" />
+       id="avatar" name="avatar"
+       accept="image/png, image/jpeg" />
 </div>
 <br></br>
 <hr></hr>
 <br></br>
-  
 
-  <button type="submit" className="postbutton">Post Job</button>
-</form>
+
+      <button type="submit" className="postbutton">Post Job</button>
+    </form>
       
          </Modal.Body>
 
@@ -161,6 +194,8 @@ const ApplyModal = () => {
         <Button onClick={applyhandleClose} variant="secondary">Close</Button>
       </Modal.Footer>
 
+
+    
 
       </Modal.Header>
 
@@ -176,12 +211,26 @@ const ApplyModal = () => {
   if (!data) return <div>Loading...</div>
 
 
+  var showHide = false;
+
+
+    if (data.data.wallet == "idk"){
+    showHide = true
+    }
+    else{
+      showHide = false
+    }
+  
 
   return (
       <div className='container'>
         {console.log(data)}
+
+        
        
-        <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} />
+        <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} filter={ filterFactory()} />
+
+        
 
         {show ? <ModalContent /> : null}
         {applyshow ? <ApplyModal /> : null}
