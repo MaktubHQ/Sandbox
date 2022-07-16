@@ -6,6 +6,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import ToolkitProvider from 'react-bootstrap-table2-toolkit';
+import ConnectWallet from '../landing/connectwallet';
 
 // es5 
 
@@ -21,6 +22,8 @@ function FirstTab() {
 
   const [modalInfo, setModalInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
+
+  const wallet = ConnectWallet.walletAddress
 
   const [applymodalInfo, applysetModalInfo] = useState([]);
   const [applyshowModal, applysetShowModal] = useState(false);
@@ -57,6 +60,11 @@ function FirstTab() {
 , {
   dataField: '_id',
   text: 'ID',
+  hidden: true
+},
+{
+  dataField: 'wallet',
+  text: 'Wallet',
   hidden: true
 }
 ];
@@ -118,7 +126,7 @@ const ApplyModal = () => {
       <Modal.Title>{applymodalInfo.role} Edit Listing</Modal.Title>
       {console.log(modalInfo.id)}
       <Modal.Body>
-      <form
+      {/* <form
       name="job-listing-form"
       method="PUT"
       action="/api/posts"
@@ -185,7 +193,9 @@ const ApplyModal = () => {
 
 
       <button type="submit" className="postbutton">Post Job</button>
-    </form>
+    </form> */}
+
+    <p>Coming soon ...</p>
       
          </Modal.Body>
 
@@ -214,7 +224,7 @@ const ApplyModal = () => {
   var showHide = false;
 
 
-    if (data.data.wallet == "idk"){
+    if (data.data.wallet == {wallet}){
     showHide = true
     }
     else{

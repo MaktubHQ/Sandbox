@@ -185,7 +185,7 @@ const ApplyModal = () => {
   var showHide = false;
 
 
-    if (data.data.wallet == "idk"){
+    if (data.data.wallet == walletAddress){
     showHide = true
     }
     else{

@@ -1,4 +1,5 @@
 import clientPromise from "../../utils/mongodb";
+import ConnectWallet from "../../components/landing/connectwallet";
 
 export default async function handler(req, res) {
   const client = await clientPromise;
@@ -11,7 +12,7 @@ export default async function handler(req, res) {
       break;
     case "GET":
       const joblistProfile = await db.collection("applications").find({
-        wallet: "idk"}).toArray();
+        wallet: ConnectWallet.walletAddress}).toArray();
       res.json({ status: 200, data: joblistProfile });
       break;
     case "PUT":
@@ -19,6 +20,6 @@ export default async function handler(req, res) {
         const filter = { _id: req.query._id };
         let update = JSON.parse(JSON.stringify(req.body));
         const result = await collection.updateOne(filter, update);
-        
+
   }
 }

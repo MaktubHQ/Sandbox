@@ -1,10 +1,18 @@
 import Image from "next/image";
+import { useState } from "react";
+import React from "react";
+
 function changeBackground(e) {
     e.target.style.color = 'black';
   }
 
+
+
+  
+
 const JobListingForm = (
 
+  
     
 
 
@@ -14,6 +22,7 @@ const JobListingForm = (
       action="/api/posts"
     >
         
+      <input type="hidden" id="wallet" name="wallet" value={{wallet}} />
         
       <label htmlFor="title">Job Title:* </label>
       <input
@@ -79,6 +88,49 @@ const JobListingForm = (
   );
 
 const SecondTab = () => {
+
+  const [walletAddress, setWalletAddress] = useState(null);
+
+  const checkIfWalletIsConnected = async () => {
+    try {
+      const { solana } = window;
+
+      if (solana) {
+        if (solana.isPhantom) {
+          console.log('Phantom wallet found!');
+          const response = await solana.connect({ onlyIfTrusted: true });
+          handleShowProfile()
+          console.log(
+            'Connected with Public Key:',
+            response.publicKey.toString()
+          );
+
+          /*
+           * Set the user's publicKey in state to be used later!
+           */
+          setWalletAddress(response.publicKey.toString());
+        }
+      } else {
+        alert('Solana object not found! Get a Phantom Wallet 👻');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+
+ useEffect(() => {
+  const onLoad = async () => {
+    await checkIfWalletIsConnected();
+  };
+  window.addEventListener('load', onLoad);
+  return () => window.removeEventListener('load', onLoad);
+}, []);
+
+const wallet = checkIfWalletIsConnected().walletAddress
+console.log(wallet)
+  
     return (
       <div className="SecondTab" >
           <div style={{

@@ -6,6 +6,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
+
 // es5 
 
 // es6
@@ -15,7 +16,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-function FirstTab() {
+function FirstTab({walletAddress}) {
   const { data, error } = useSWR('/api/posts', fetcher)
 
   const [modalInfo, setModalInfo] = useState([]);
@@ -24,7 +25,7 @@ function FirstTab() {
   const [applymodalInfo, applysetModalInfo] = useState([]);
   const [applyshowModal, applysetShowModal] = useState(false);
 
-
+  console.log(walletAddress)
   const [show, setShow] = useState(false)
 
   const [applyshow, applysetShow] = useState(false)
@@ -41,6 +42,8 @@ function FirstTab() {
   const applytoggleTrueFalse = () => {
     applysetShowModal(applyhandleShow)
   }
+
+ 
 
   const columns = [{
   dataField: 'role',
@@ -60,6 +63,7 @@ const rowEvents = {
     console.log(row)
     setModalInfo(row)
     toggleTrueFalse()
+    
 
   }
 }
@@ -117,6 +121,7 @@ const ApplyModal = () => {
   action="/api/profileapplications"
 >
     
+<input type="hidden" id="wallet" name="wallet" value={{walletAddress}} />
 
 <div className="contacts">
 <label htmlFor="email"> E-mail Address:* </label>

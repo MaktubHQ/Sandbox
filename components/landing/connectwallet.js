@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import FirstTab from '../dejobs/firsttab';
 
 
 
@@ -52,6 +53,7 @@ const ConnectWallet = () => {
       console.log('Connected with Public Key:', response.publicKey.toString());
       setWalletAddress(response.publicKey.toString());
     }
+    return walletAddress
   };
 
   const renderNotConnectedContainer = () => (
@@ -62,6 +64,8 @@ const ConnectWallet = () => {
       Connect to Wallet
     </button>
   );
+
+
 
   
 
@@ -76,11 +80,14 @@ const ConnectWallet = () => {
 
   return (
     <div className="App">
+      
 			{/* This was solely added for some styling fanciness */}
 			<div className={walletAddress ? 'authed-container' : 'container'}>
         <div className="header-container">
           {/* Add the condition to show this only if we don't have a wallet address */}
           {!walletAddress && renderNotConnectedContainer()}
+          {/* {<FirstTab connectWallet={walletAddress}/>} */}
+          {console.log(walletAddress)}
         </div>
       </div>
     </div>
