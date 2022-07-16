@@ -7,7 +7,7 @@ import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import ToolkitProvider from 'react-bootstrap-table2-toolkit';
 import ConnectWallet from '../landing/connectwallet';
-
+import { useWallet } from '@solana/wallet-adapter-react';
 // es5 
 
 // es6
@@ -18,7 +18,9 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function FirstTab() {
-  const { data, error } = useSWR('/api/profilelistings', fetcher)
+  const {publicKey} = useWallet()
+  
+  const { data, error } = useSWR(['/api/profilelistings', publicKey], fetcher)
 
   const [modalInfo, setModalInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);

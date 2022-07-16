@@ -1,18 +1,22 @@
 import clientPromise from "../../utils/mongodb";
 import ConnectWallet from "../../components/landing/connectwallet";
+import { useWallet } from "@solana/wallet-adapter-react";
 
 export default async function handler(req, res) {
   const client = await clientPromise;
-  const db = client.db("dejobs");
+  const db = await client.db("dejobs");
   switch (req.method) {
     case "POST":
-        let bodyObject = JSON.parse(JSON.stringify(req.body));
-        let newPost = await db.collection("applications").insertOne(bodyObject);
-        res.json(newPost);
+        await db.applications.insertOne(bodyObject)
+        // let bodyObject = JSON.parse(JSON.stringify(req.body));
+        // let newPost = await db.collection("applications").insertOne(bodyObject);
+        // res.json(newPost);
       break;
     case "GET":
+      console.log("from get", req.publicKey)
       const joblistProfile = await db.collection("applications").find({
-        wallet: ConnectWallet.walletAddress}).toArray();
+        wallet: req.publicKey}).toArray();
+        console.log(req.publicKey, "printing pubkey")
       res.json({ status: 200, data: joblistProfile });
       break;
     case "PUT":

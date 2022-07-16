@@ -6,23 +6,18 @@ export default async function handler(req, res) {
   switch (req.method) {
     case "POST":
       let bodyObject = JSON.parse(JSON.stringify(req.body));
-        let newPost = await db.collection("applications").insertOne(bodyObject);
-        res.json(newPost);
+      let newPost = await db.collection("applications").insertOne(bodyObject);
+      res.json(newPost);
       break;
     case "GET":
-      const joblistProfile = await db.collection("joblist").find({
-        wallet: "idk"}).toArray();
-      res.json({ status: 200, data: joblistProfile });
+      const joblist = await db.collection("joblist").find({wallet: req.publicKey}).toArray();
+      res.json({ status: 200, data: joblist });
       break;
       case "PUT":
-        const id = req.id
-        const filter = { _id: id };
-        // update the value of the 'z' field to 42
-        const updateDocument = {
-          $set: {
-              z: 42,
-          },
-        };
-        const result = await collection.updateOne(filter, updateDocument);
+        console.log(req)
+        const filter = { _id: req.query._id };
+        let update = JSON.parse(JSON.stringify(req.body));
+        const result = await collection.updateOne(filter, update);
+        res.json({ status: 200, data: result });
   }
 }

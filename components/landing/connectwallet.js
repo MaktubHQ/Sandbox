@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import FirstTab from '../dejobs/firsttab';
-
+import { useWallet } from '@solana/wallet-adapter-react';
+import {
+  WalletModalProvider,
+  WalletDisconnectButton,
+  WalletMultiButton
+} from '@solana/wallet-adapter-react-ui';
 
 
 const ConnectWallet = () => {
@@ -9,6 +14,10 @@ const ConnectWallet = () => {
   const [showProfile, setShowProfile] = useState(false)
     const handleHideProfile = () => setShowProfile(false)
     const handleShowProfile = () => setShowProfile(true)
+
+  const { connect, publicKey } = useWallet()
+
+
 
     const triggerProfile = {
         onClick: (e, row) => {
@@ -45,24 +54,20 @@ const ConnectWallet = () => {
     }
   };
 
-  const connectWallet = async () => {
-    const { solana } = window;
+  // const connectWallet = async () => {
+  //   const { solana } = window;
   
-    if (solana) {
-      const response = await solana.connect();
-      console.log('Connected with Public Key:', response.publicKey.toString());
-      setWalletAddress(response.publicKey.toString());
-    }
-    return walletAddress
-  };
+  //   if (solana) {
+  //     const response = await solana.connect();
+  //     console.log('Connected with Public Key:', response.publicKey.toString());
+  //     setWalletAddress(response.publicKey.toString());
+  //   }
+  //   return walletAddress
+  // };
 
-  const renderNotConnectedContainer = () => (
-    <button
-      className="cta-button connect-wallet-button"
-      onClick={connectWallet}
-    >
-      Connect to Wallet
-    </button>
+  const ConnectWallet = () => (
+    <><WalletMultiButton /></>
+
   );
 
 
@@ -82,10 +87,10 @@ const ConnectWallet = () => {
     <div className="App">
       
 			{/* This was solely added for some styling fanciness */}
-			<div className={walletAddress ? 'authed-container' : 'container'}>
+			<div>
         <div className="header-container">
           {/* Add the condition to show this only if we don't have a wallet address */}
-          {!walletAddress && renderNotConnectedContainer()}
+          <ConnectWallet/>
           {/* {<FirstTab connectWallet={walletAddress}/>} */}
           {console.log(walletAddress)}
         </div>

@@ -6,6 +6,9 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import ToolkitProvider from 'react-bootstrap-table2-toolkit';
+import { useWallet } from '@solana/wallet-adapter-react';
+
+
 
 // es5 
 
@@ -17,7 +20,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function SecondTab() {
-  const { data, error } = useSWR('/api/profileapplications', fetcher)
+  const { data, error } = useSWR('/profilelistings', fetcher)
 
   const [modalInfo, setModalInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -42,6 +45,7 @@ function SecondTab() {
   const applytoggleTrueFalse = () => {
     applysetShowModal(applyhandleShow)
   }
+  const { connect, publicKey } = useWallet()
 
   const columns = [{
   dataField: 'intro',
@@ -179,13 +183,13 @@ const ApplyModal = () => {
 
 
   if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  if (!data || !publicKey) return <div>Loading...</div>
 
 
   var showHide = false;
 
 
-    if (data.data.wallet == walletAddress){
+    if (data.data.wallet == (publicKey.toString())){
     showHide = true
     }
     else{

@@ -17,6 +17,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function FirstTab({walletAddress}) {
+
   const { data, error } = useSWR('/api/posts', fetcher)
 
   const [modalInfo, setModalInfo] = useState([]);
