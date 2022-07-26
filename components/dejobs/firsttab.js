@@ -162,7 +162,7 @@ const ApplyModal = () => {
 <br></br>
   
 
-  <button type="submit" className="postbutton">Post Job</button>
+  <button type="submit" className="postbutton">Apply to Job</button>
 </form>
       
          </Modal.Body>
