@@ -15,12 +15,13 @@ import { useWallet } from '@solana/wallet-adapter-react';
 // es6
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+import { WalletReadyState } from '@solana/wallet-adapter-base';
 
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function SecondTab() {
-  const { data, error } = useSWR('/profilelistings', fetcher)
+  const { data, error } = useSWR('/api/profilelistings', fetcher)
 
   const [modalInfo, setModalInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -183,7 +184,9 @@ const ApplyModal = () => {
 
 
   if (error) return <div>Failed to load</div>
-  if (!data || !publicKey) return <div>Loading...</div>
+  if (!data || !publicKey) return <div>Connect a wallet to see applications to your Dealz...</div>
+  console.log(data)
+  console.log(publicKey.toString())
 
 
   var showHide = false;
@@ -196,14 +199,32 @@ const ApplyModal = () => {
       showHide = false
     }
   
+    const walletData = [];
+
+    const cleanData = () =>  {
+      
+        for(let i=0; i < data.data.length; ++i){
+          console.log(data.data[i])
+              if(data.data[i].wallet == publicKey.toString()){
+                walletData.push(data.data[i])
+                console.log("Wallet Data")
+                console.log(walletData)
+              }
+             }
+    }
+
+
+
+
 
   return (
       <div className='container'>
         {console.log(data)}
+        {cleanData()}
 
         
        
-        <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} filter={ filterFactory()} />
+        <BootstrapTable keyField="index" data={ walletData } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} filter={ filterFactory()} />
 
         
 

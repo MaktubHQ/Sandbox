@@ -14,6 +14,10 @@ function changeBackground(e) {
 const JobListingForm = () => {
 
   const { connect, publicKey } = useWallet()
+
+  if (!publicKey) return <div>Connect a wallet to post a Deal...</div>
+
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(event.target.publicKey.value)

@@ -20,7 +20,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 function FirstTab() {
   const {publicKey} = useWallet()
   
-  const { data, error } = useSWR(['/api/profilelistings', publicKey], fetcher)
+  const { data, error } = useSWR('/api/profilelistings', fetcher)
 
   const [modalInfo, setModalInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -223,24 +223,32 @@ const ApplyModal = () => {
   if (!data) return <div>Loading...</div>
 
 
-  var showHide = false;
+  const walletData = [];
 
-
-    if (data.data.wallet == {wallet}){
-    showHide = true
-    }
-    else{
-      showHide = false
+    const cleanData = () =>  {
+      
+        for(let i=0; i < data.data.length; ++i){
+          console.log(data.data[i])
+          if(publicKey){
+            if(data.data[i].wallet == publicKey.toString()){
+              walletData.push(data.data[i])
+              console.log("Wallet Data")
+              console.log(walletData)
+            }
+          }
+              
+             }
     }
   
 
   return (
       <div className='container'>
         {console.log(data)}
+        {cleanData()}
 
         
        
-        <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} filter={ filterFactory()} />
+        <BootstrapTable keyField="index" data={ walletData } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} filter={ filterFactory()} />
 
         
 

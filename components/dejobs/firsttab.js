@@ -5,6 +5,7 @@ import { Modal, Button } from "react-bootstrap";
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import { useWallet } from '@solana/wallet-adapter-react';
 
 
 // es5 
@@ -19,6 +20,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 function FirstTab({walletAddress}) {
 
   const { data, error } = useSWR('/api/posts', fetcher)
+  const { connect, publicKey } = useWallet()
 
   const [modalInfo, setModalInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -181,8 +183,8 @@ const ApplyModal = () => {
 
 
 
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
+if (error) return <div>Failed to load</div>
+if (!data || !publicKey) return <div>Please connect a wallet to see Dealz...</div>
 
 
 

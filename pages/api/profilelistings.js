@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       res.json(newPost);
       break;
     case "GET":
-      const joblist = await db.collection("joblist").find({wallet: req.publicKey}).toArray();
+      const joblist = await db.collection("joblist").find({}).toArray();
       res.json({ status: 200, data: joblist });
       break;
       case "PUT":
