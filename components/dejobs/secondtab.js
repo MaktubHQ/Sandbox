@@ -26,9 +26,9 @@ const JobListingForm = () => {
   return (
     <form
       name="job-listing-form"
-      // method="post"
-      // action="/api/posts"
-      onSubmit={handleSubmit}
+      method="post"
+      action="/api/posts"
+      // onSubmit={handleSubmit}
 
     >
 
