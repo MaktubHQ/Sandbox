@@ -81,13 +81,13 @@ const JobListingForm = () => {
 
 
       </div>
-      <div>
+      {/* <div>
         <label htmlFor="image">Choose a listing photo: </label>
 
         <input type="file"
           id="avatar" name="avatar"
           accept="image/png, image/jpeg" />
-      </div>
+      </div> */}
       <br></br>
       <hr></hr>
       <br></br>
