@@ -32,7 +32,7 @@ const JobListingForm = () => {
 
     >
 
-      <input type="hidden" id="wallet" name="publicKey" value={publicKey && publicKey.toString()} />
+      <input type="hidden" id="wallet" name="wallet" value={publicKey && publicKey.toString()} />
 
       <label htmlFor="title">Job Title:* </label>
       <input
