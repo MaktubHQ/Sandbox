@@ -21,7 +21,7 @@ import { WalletReadyState } from '@solana/wallet-adapter-base';
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function SecondTab() {
-  const { data, error } = useSWR('/api/profilelistings', fetcher)
+  const { data, error } = useSWR('/api/profileapplications', fetcher)
 
   const [modalInfo, setModalInfo] = useState([]);
   const [showModal, setShowModal] = useState(false);
