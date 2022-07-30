@@ -124,7 +124,7 @@ const ApplyModal = () => {
   action="/api/profileapplications"
 >
     
-<input type="hidden" id="wallet" name="wallet" value={{walletAddress}} />
+<input type="hidden" id="wallet" name="wallet" value={publicKey} />
 
 <div className="contacts">
 <label htmlFor="email"> E-mail Address:* </label>

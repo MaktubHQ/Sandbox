@@ -7,18 +7,12 @@ export default async function handler(req, res) {
     case "POST":
       let bodyObject = JSON.parse(JSON.stringify(req.body));
       let newPost = await db.collection("applications").insertOne(bodyObject);
-      res.redirect(307, '/profile')
+      res.redirect(307, '/dejobs')
       res.json(newPost);
       break;
     case "GET":
       const joblist = await db.collection("applications").find({}).toArray();
       res.json({ status: 200, data: joblist });
       break;
-    case "PUT":
-      console.log(req)
-      const filter = { _id: req.query._id };
-      let update = JSON.parse(JSON.stringify(req.body));
-      const result = await collection.updateOne(filter, update);
-      res.json({ status: 200, data: result });
   }
 }
