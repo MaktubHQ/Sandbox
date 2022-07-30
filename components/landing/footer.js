@@ -5,6 +5,7 @@ import styles from '../../styles/Home.module.css'
 import maktub from '../../public/maktub.png'
 
 
+
 const Footer = () => {
 
     return (
