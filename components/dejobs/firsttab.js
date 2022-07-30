@@ -138,16 +138,17 @@ const ApplyModal = () => {
   <input id="contact" type="email" name="email" />
 <br></br>
 
+<hr></hr>
+
 <label htmlFor="discord"> Discord ID: </label>
   <input id="contact" type="text" name="discord"  />
-
   <br></br>
+  <hr></hr>
 
   <label htmlFor="twitter"> Twitter: </label>
   <input id="contact" type="text" name="twitter"  />
-
-  
   <br></br>
+  <hr></hr>
 
 </div>
  
@@ -155,11 +156,14 @@ const ApplyModal = () => {
   
 <div className="jobinfo">
 
-  <label htmlFor="message">Introduction:* </label>
+  <label htmlFor="message">Introduction: * </label>
   <textarea id="intro" name="intro" required></textarea>
 
 
 </div>
+
+<hr></hr>
+
 <div>
 <label htmlFor="file">Upload Resume/CV: </label>
 

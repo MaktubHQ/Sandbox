@@ -34,25 +34,37 @@ const JobListingForm = () => {
 
       <input type="hidden" id="wallet" name="wallet" value={publicKey && publicKey.toString()} />
 
-      <label htmlFor="title">Job Title:* </label>
+      <label htmlFor="project"> Organization: </label>
+        <input id="project" type="text" name="project" />
+      <br></br>
+<hr></hr>
+      <label htmlFor="title">Job Title: * </label>
       <input
         id="title"
         name="title"
         required
         type="text"
       />
-      <br></br>
+ <br></br>
+ <hr></hr>
+
+
 
       <div className="role">
         <label htmlFor="role">Role:* </label>
-        <input id="role" type="radio" name="role" value="Dev" />
-        <label htmlFor="role"> Dev  </label>
-        <input type="radio" id="role" name="role" value="Designer" />
-        <label htmlFor="role"> Designer  </label>
-        <input type="radio" id="role" name="role" value="Marketer" />
+        <br></br>
+        <input id="role" type="radio" name="role" value="Dev " />
+        <label htmlFor="role"> Dev   </label>
+        <br></br>
+        <input type="radio" id="role" name="role" value="Designer " />
+        <label htmlFor="role"> Designer   </label>
+        <br></br>
+        <input type="radio" id="role" name="role" value="Marketer " />
         <label htmlFor="role"> Marketer </label><br></br>
 
       </div>
+
+      <hr></hr>
 
       <div className="contacts">
         <label htmlFor="email"> E-mail Address: </label>
@@ -66,17 +78,20 @@ const JobListingForm = () => {
 
 
         <br></br>
+        <hr></hr>
 
       </div>
 
 
 
       <div className="jobinfo">
-        <label htmlFor="budget">Budget:* </label>
+        <label htmlFor="budget">Budget: * </label>
         <input id="contact" type="text" name="budget" required />
         <br></br>
 
-        <label htmlFor="message">Job Description:* </label>
+        <hr></hr>
+
+        <label htmlFor="message">Job Description: * </label>
         <textarea id="jobdescription" name="jobdescription" required></textarea>
 
 
