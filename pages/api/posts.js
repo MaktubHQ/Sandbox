@@ -7,7 +7,10 @@ export default async function handler(req, res) {
     case "POST":
       let bodyObject = JSON.parse(JSON.stringify(req.body));
       let newPost = await db.collection("joblist").insertOne(bodyObject);
+
+      res.redirect(307, '/dejobs')
       res.json(newPost);
+
       break;
     case "GET":
       const joblist = await db.collection("joblist").find({}).toArray();
@@ -20,4 +23,5 @@ export default async function handler(req, res) {
         const result = await collection.updateOne(filter, update);
         res.json({ status: 200, data: result });
   }
+
 }

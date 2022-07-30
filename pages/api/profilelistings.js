@@ -7,7 +7,9 @@ export default async function handler(req, res) {
     case "POST":
       let bodyObject = JSON.parse(JSON.stringify(req.body));
       let newPost = await db.collection("applications").insertOne(bodyObject);
+      res.redirect(307, '/profile')
       res.json(newPost);
+
       break;
     case "GET":
       const joblist = await db.collection("joblist").find({}).toArray();
