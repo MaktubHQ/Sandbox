@@ -4,6 +4,9 @@ import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import 'react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css';
 import '../styles/globals.css'
 import '../styles/font.css'
+import "@fontsource/open-sans";
+import "@fontsource/open-sans/500.css"; // Weight 500.
+//import "@fontsource/open-sans/900-italic.css";
 
 import React, { FC, useMemo } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';

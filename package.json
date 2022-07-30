@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/open-sans": "^4.5.10",
     "@solana-mobile/wallet-adapter-mobile": "^0.0.1-alpha.5",
     "@solana/wallet-adapter-base": "^0.9.9",
     "@solana/wallet-adapter-react": "^0.15.8",

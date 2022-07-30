@@ -183,7 +183,10 @@
 body {
   background: white;
   color: #333;
-  font-family: "Nunito";
+  
+  font-family: "Open Sans", sans-serif;
+
+  
 }
 a {
   color: black;
