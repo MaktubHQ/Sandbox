@@ -51,7 +51,7 @@ function FirstTab() {
 
   const columns = [{
   dataField: 'role',
-  text: 'Job Title'
+  text: 'Role'
 }, {
   dataField: 'title',
   text: 'Details'

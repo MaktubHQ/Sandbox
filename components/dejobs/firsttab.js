@@ -59,6 +59,10 @@ function FirstTab({walletAddress}) {
   dataField: 'budget',
   text: 'Pay'
 },
+, {
+  dataField: 'wallet',
+  hidden: true
+},
 ];
 
 const rowEvents = {
@@ -66,6 +70,8 @@ const rowEvents = {
     console.log(row)
     setModalInfo(row)
     toggleTrueFalse()
+    applysetModalInfo(row)
+    applytoggleTrueFalse()
     
 
   }
@@ -124,14 +130,18 @@ const ApplyModal = () => {
   action="/api/profileapplications"
 >
     
-<input type="hidden" id="wallet" name="wallet" value={publicKey} />
+<input type="hidden" id="wallet" name="ownerWallet" value={applymodalInfo.wallet} />
+<input type="hidden" id="jobtitle" name="jobTitle" value={applymodalInfo.title} />
 
 <div className="contacts">
-<label htmlFor="email"> E-mail Address:* </label>
-  <input id="contact" type="email" name="email" required />
+<label htmlFor="email"> E-mail Address: </label>
+  <input id="contact" type="email" name="email" />
+<br></br>
 
 <label htmlFor="discord"> Discord ID: </label>
   <input id="contact" type="text" name="discord"  />
+
+  <br></br>
 
   <label htmlFor="twitter"> Twitter: </label>
   <input id="contact" type="text" name="twitter"  />

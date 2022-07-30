@@ -49,12 +49,18 @@ function SecondTab() {
   const { connect, publicKey } = useWallet()
 
   const columns = [{
+    dataField: 'title',
+    text: 'Job Title'
+  },
+  {
   dataField: 'intro',
   text: 'Introduction'
-}, {
+}, 
+{
   dataField: 'discord',
   text: 'Discord'
-}, {
+}, 
+{
   dataField: 'twitter',
   text: 'Twitter'
 }
@@ -82,17 +88,21 @@ const ModalContent = () => {
 
       <Modal.Header closeButton>
 
-        <Modal.Title>{modalInfo.role}</Modal.Title>
+        <Modal.Title>{modalInfo.title}</Modal.Title>
 
         <Modal.Body>
+          <h6>
+            Meet your partner!
+            </h6>
           <p>
           {modalInfo.intro}
           </p>
+          <br></br>
           <p>
-          {"Discord is " + modalInfo.discord}
+          {"Discord: " + modalInfo.discord}
           </p>
           <p>
-          {"Twitter is " + modalInfo.twitter}
+          {"Twitter: " + modalInfo.twitter}
           </p>
         
            </Modal.Body>
