@@ -62,6 +62,9 @@ function FirstTab({walletAddress}) {
 , {
   dataField: 'wallet',
   hidden: true
+},{
+  dataField: 'jobdescription',
+  hidden: true
 },
 ];
 
@@ -71,7 +74,7 @@ const rowEvents = {
     setModalInfo(row)
     toggleTrueFalse()
     applysetModalInfo(row)
-    applytoggleTrueFalse()
+    // applytoggleTrueFalse()
     
 
   }
@@ -90,15 +93,22 @@ const ModalContent = () => {
 
       <Modal.Header closeButton>
 
-        <Modal.Title>{modalInfo.role}</Modal.Title>
+        <Modal.Title>{modalInfo.title}</Modal.Title>
+        <hr></hr>
 
         <Modal.Body>
           <p>
-          {modalInfo.title}
+          {modalInfo.role + " Role"}
           </p>
+          <hr></hr>
           <p>
           {"Budget is " + modalInfo.budget}
           </p>
+          <hr></hr>
+          <p>
+          {modalInfo.jobdescription}
+          </p>
+          
         
            </Modal.Body>
 
