@@ -151,10 +151,10 @@ const ApplyModal = () => {
 
 </div>
 <div>
-<label htmlFor="image">Upload Resume/CV: </label>
+<label htmlFor="file">Upload Resume/CV: </label>
 
 <input type="file"
-   id="avatar" name="avatar"
+   id="file" name="file"
    accept="application/pdf" />
 </div>
 <br></br>

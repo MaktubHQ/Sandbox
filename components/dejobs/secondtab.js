@@ -55,8 +55,8 @@ const JobListingForm = () => {
       </div>
 
       <div className="contacts">
-        <label htmlFor="email"> E-mail Address:* </label>
-        <input id="contact" type="email" name="email" required />
+        <label htmlFor="email"> E-mail Address: </label>
+        <input id="contact" type="email" name="email" />
 
         <label htmlFor="discord"> Discord ID: </label>
         <input id="contact" type="text" name="discord" />
