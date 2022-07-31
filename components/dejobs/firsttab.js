@@ -208,7 +208,7 @@ const ApplyModal = () => {
 
 
 if (error) return <div>Failed to load</div>
-if (!data || !publicKey) return <div>Please connect a wallet to see Dealz...</div>
+if (!data) return <div>Please connect a wallet to see Dealz...</div>
 
 
 
