@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       let bodyObject = JSON.parse(JSON.stringify(req.body));
       let newPost = await db.collection("applications").insertOne(bodyObject);
       res.redirect(307, '/dejobs')
-      res.json(newPost);
+      return res.json(newPost);
       break;
     case "GET":
       const joblist = await db.collection("applications").find({}).toArray();

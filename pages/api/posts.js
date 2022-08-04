@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   
   
         res.redirect(307, '/dejobs')
-        res.json(newPost);
+         return res.json(newPost);
       }
      
       catch(err){
