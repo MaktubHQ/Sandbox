@@ -49,7 +49,7 @@ function SecondTab() {
   const { connect, publicKey } = useWallet()
 
   const columns = [{
-    dataField: 'title',
+    dataField: 'jobTitle',
     text: 'Job Title'
   },
   {
@@ -63,12 +63,18 @@ function SecondTab() {
 {
   dataField: 'twitter',
   text: 'Twitter'
+},
+{
+  dataField: 'ownerWallet',
+  hidden: true,
+  text: 'Wallet'
 }
 ];
 
 const rowEvents = {
   onClick: (e, row) => {
-    console.log(row)
+    
+      console.log(row)
     setModalInfo(row)
     toggleTrueFalse()
 
@@ -215,7 +221,7 @@ const ApplyModal = () => {
       
         for(let i=0; i < data.data.length; ++i){
           console.log(data.data[i])
-              if(data.data[i].wallet == publicKey.toString()){
+              if(data.data[i].ownerWallet == publicKey.toString()){
                 walletData.push(data.data[i])
                 console.log("Wallet Data")
                 console.log(walletData)
