@@ -25,12 +25,6 @@ export default async function handler(req, res) {
       const joblist = await db.collection("joblist").find({}).toArray();
       res.json({ status: 200, data: joblist });
       break;
-      case "PUT":
-        console.log(req)
-        const filter = { _id: req.query._id };
-        let update = JSON.parse(JSON.stringify(req.body));
-        const result = await collection.updateOne(filter, update);
-        res.json({ status: 200, data: result });
   }
 
 }
