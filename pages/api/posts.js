@@ -6,19 +6,10 @@ export default async function handler(req, res) {
   const db = client.db("dejobs");
   switch (req.method) {
     case "POST":
-      try{
         let bodyObject = JSON.parse(JSON.stringify(req.body));
         let newPost = await db.collection("joblist").insertOne(bodyObject);
-  
-  
-        res.redirect(200, '/dejobs')
-         return res.json(newPost);
-      }
-     
-      catch(err){
-        res.redirect(500, '/dejobs')
-      }
-     
+        res.json(newPost);
+
 
       break;
     case "GET":

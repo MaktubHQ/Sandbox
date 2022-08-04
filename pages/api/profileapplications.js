@@ -7,8 +7,9 @@ export default async function handler(req, res) {
     case "POST":
       let bodyObject = JSON.parse(JSON.stringify(req.body));
       let newPost = await db.collection("applications").insertOne(bodyObject);
-      res.redirect(200, '/dejobs')
-      return res.json(newPost);
+
+       
+        res.json(newPost);
       break;
   }
 }
