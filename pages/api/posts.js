@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         let newPost = await db.collection("joblist").insertOne(bodyObject);
   
   
-        res.redirect(307, '/dejobs')
+        res.redirect(200, '/dejobs')
          return res.json(newPost);
       }
      
