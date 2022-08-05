@@ -196,7 +196,19 @@ const ApplyModal = () => {
   )
  
 }
+const walletData = [];
 
+const cleanData = () =>  {
+  
+    for(let i=0; i < data.data.length; ++i){
+      console.log(data.data[i])
+          if(data.data[i].ownerWallet == publicKey.toString()){
+            walletData.push(data.data[i])
+            console.log("Wallet Data")
+            console.log(walletData)
+          }
+         }
+}
 
 
   if (error) return <div>Failed to load</div>
@@ -215,19 +227,7 @@ const ApplyModal = () => {
       showHide = false
     }
   
-    const walletData = [];
-
-    const cleanData = () =>  {
-      
-        for(let i=0; i < data.data.length; ++i){
-          console.log(data.data[i])
-              if(data.data[i].ownerWallet == publicKey.toString()){
-                walletData.push(data.data[i])
-                console.log("Wallet Data")
-                console.log(walletData)
-              }
-             }
-    }
+   
 
 
 

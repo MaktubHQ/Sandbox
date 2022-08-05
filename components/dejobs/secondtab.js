@@ -2,13 +2,22 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import React from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
+import { Modal, Button } from "react-bootstrap";
 
 function changeBackground(e) {
   e.target.style.color = 'black';
 }
 
+function SecondTab() {
 
-
+  const [confirmmodalInfo, confirmsetModalInfo] = useState([]);
+  const [confirmshowModal, confirmsetShowModal] = useState(false);
+  const [confirmshow, confirmsetShow] = useState(false)
+  const confirmhandleClose = () => confirmsetShow(false)
+  const confirmhandleShow = () => confirmsetShow(true)
+  const confirmtoggleTrueFalse = () => {
+    confirmsetShowModal(confirmhandleShow)
+  }
 
 
 const JobListingForm = () => {
@@ -19,16 +28,58 @@ const JobListingForm = () => {
 
   
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log(event.target.publicKey.value)
-    await db.collection("joblist").insertOne(bodyObject);
+    // Stop the form from submitting and refreshing the page.
+    event.preventDefault()
+  
+    confirmhandleShow()
+  
+    // Get data from the form.
+    const data = {
+      wallet: event.target.wallet.value,
+      project: event.target.project.value,
+      title: event.target.title.value,
+      role: event.target.role.value,
+      email: event.target.email.value,
+      discord: event.target.discord.value,
+      twitter: event.target.twitter.value,
+      budget: event.target.budget.value,
+      jobdescription: event.target.jobdescription.value,
+    }
+  
+    // Send the data to the server in JSON format.
+    const JSONdata = JSON.stringify(data)
+  
+    // API endpoint where we send form data.
+    const endpoint = '/api/posts'
+  
+    // Form the request for sending data to the server.
+    const options = {
+      // The method is POST because we are sending data.
+      method: 'POST',
+      // Tell the server we're sending JSON.
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      // Body of the request is the JSON data we created above.
+      body: JSONdata,
+    }
+  
+    // Send the form data to our forms API on Vercel and get a response.
+    const response = await fetch(endpoint, options)
+  
+    // Get the response data from server as JSON.
+    // If server returns the name submitted, that means the form works.
+    const result = await response.json()
+    console.log(result)
+    console.log(data)
+    
+  
   }
   return (
     <form
       name="job-listing-form"
-      method="post"
-      action="/api/posts"
-      // onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
 
     >
 
@@ -68,13 +119,13 @@ const JobListingForm = () => {
 
       <div className="contacts">
         <label htmlFor="email"> E-mail Address: </label>
-        <input id="contact" type="email" name="email" />
+        <input id="email" type="email" name="email" />
 
         <label htmlFor="discord"> Discord ID: </label>
-        <input id="contact" type="text" name="discord" />
+        <input id="discord" type="text" name="discord" />
 
         <label htmlFor="twitter"> Twitter: </label>
-        <input id="contact" type="text" name="twitter" />
+        <input id="twitter" type="text" name="twitter" />
 
 
         <br></br>
@@ -86,7 +137,7 @@ const JobListingForm = () => {
 
       <div className="jobinfo">
         <label htmlFor="budget">Budget: * </label>
-        <input id="contact" type="text" name="budget" required />
+        <input id="budget" type="text" name="budget" required />
         <br></br>
 
         <hr></hr>
@@ -113,7 +164,38 @@ const JobListingForm = () => {
   )
 }
 
-const SecondTab = () => {
+
+
+  const ModalConfirm = () => {
+    return (
+      <Modal show = { confirmshow } onHide= {confirmhandleClose}>
+  
+        <Modal.Header confirmcloseButton>
+  
+          <Modal.Title>Your application was successfully submitted!</Modal.Title>
+          <hr></hr>
+  
+          <Modal.Body>
+            <p>
+            Keep an eye on your contact informations provided for more details.
+            </p>
+             </Modal.Body>
+  
+          <Modal.Footer> 
+  
+            <Button onClick={confirmhandleShow} variant="secondary">Close</Button>
+          </Modal.Footer>
+  
+  
+          </Modal.Header>
+  
+  
+      </Modal>
+    )
+  }
+
+
+
 
 
 
@@ -130,6 +212,7 @@ const SecondTab = () => {
         <br></br>
         <div>
           <JobListingForm />
+          {confirmshow ? <ModalConfirm /> : null}
         </div>
 
 

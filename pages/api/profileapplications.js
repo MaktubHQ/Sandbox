@@ -6,18 +6,15 @@ export default async function handler(req, res) {
   const db = client.db("dejobs");
   switch (req.method) {
     case "POST":
-      //try{
+      
     
       let bodyObject = JSON.parse(JSON.stringify(req.body));
       let newPost = await db.collection("applications").insertOne(bodyObject);
       res.json(newPost)
-      // if(res.body.acknowledged == true){
-      //   res.redirect([200, 307], '/dejobs')
-      // }
-      // }
-      // catch{
-      //   res.status(500).json({ error: 'failed to load data' })
-      // }
       break;
+    case "GET":
+        const joblist = await db.collection("applications").find({}).toArray();
+        res.json({ status: 200, data: joblist });
+        break;
   }
 }
