@@ -669,3 +669,34 @@ nav a:active{
 .hideProfile{
   display: none;
 }
+
+@media only screen and (max-width: 600px) {
+  a{
+    font-size: 15px;
+  }
+  .header {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  nav {
+    margin: 5px auto 20px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-bottom: 1px solid #ddd;
+  }
+  nav a {
+    margin-left: 5px;
+    padding: 10px;
+  }
+  
+  nav .logo {
+    margin-right: auto;
+  }
+  nav .wallet {
+    margin-left: auto;
+  }
+}
