@@ -119,6 +119,7 @@ const ModalContent = () => {
   )
 }
 
+
 const ApplyModal = () => {
   return (
     <Modal show = { applyshow } onHide= {applyhandleClose}>

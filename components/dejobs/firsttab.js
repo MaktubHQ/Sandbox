@@ -6,9 +6,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import { useWallet } from '@solana/wallet-adapter-react';
-
-
-// es5 
+import { useRouter } from 'next/router'
 
 // es6
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
@@ -28,10 +26,15 @@ function FirstTab({walletAddress}) {
   const [applymodalInfo, applysetModalInfo] = useState([]);
   const [applyshowModal, applysetShowModal] = useState(false);
 
+  const [confirmmodalInfo, confirmsetModalInfo] = useState([]);
+  const [confirmshowModal, confirmsetShowModal] = useState(false);
+
   console.log(walletAddress)
   const [show, setShow] = useState(false)
 
   const [applyshow, applysetShow] = useState(false)
+
+  const [confirmshow, confirmsetShow] = useState(false)
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -39,11 +42,17 @@ function FirstTab({walletAddress}) {
   const applyhandleClose = () => applysetShow(false)
   const applyhandleShow = () => applysetShow(true)
 
+  const confirmhandleClose = () => confirmsetShow(false)
+  const confirmhandleShow = () => confirmsetShow(true)
+
   const toggleTrueFalse = () => {
     setShowModal(handleShow)
   }
   const applytoggleTrueFalse = () => {
     applysetShowModal(applyhandleShow)
+  }
+  const confirmtoggleTrueFalse = () => {
+    confirmsetShowModal(confirmhandleShow)
   }
 
  
@@ -124,6 +133,60 @@ const ModalContent = () => {
     </Modal>
   )
 }
+const handleSubmit = async (event) => {
+  // Stop the form from submitting and refreshing the page.
+  event.preventDefault()
+
+  handleClose()
+  applyhandleClose()
+
+  // Get data from the form.
+  const data = {
+    ownerWallet: event.target.ownerWallet.value,
+    jobTitle: event.target.jobTitle.value,
+    email: event.target.email.value,
+    discord: event.target.discord.value,
+    twitter: event.target.twitter.value,
+    intro: event.target.intro.value,
+    file: event.target.file.value,
+
+  }
+
+  // Send the data to the server in JSON format.
+  const JSONdata = JSON.stringify(data)
+
+  // API endpoint where we send form data.
+  const endpoint = '/api/profileapplications'
+
+  // Form the request for sending data to the server.
+  const options = {
+    // The method is POST because we are sending data.
+    method: 'POST',
+    // Tell the server we're sending JSON.
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    // Body of the request is the JSON data we created above.
+    body: JSONdata,
+  }
+
+  // Send the form data to our forms API on Vercel and get a response.
+  const response = await fetch(endpoint, options)
+
+  // Get the response data from server as JSON.
+  // If server returns the name submitted, that means the form works.
+  const result = await response.json()
+  console.log(result)
+  console.log(data)
+
+  confirmhandleShow()
+  
+
+}
+
+const router = useRouter()
+
+
 
 const ApplyModal = () => {
   return (
@@ -134,29 +197,29 @@ const ApplyModal = () => {
       <Modal.Title>{applymodalInfo.role} Application</Modal.Title>
 
       <Modal.Body>
+
       <form
   name="job-listing-form"
-  method="POST"
-  action="/api/profileapplications"
+  onSubmit={handleSubmit}
 >
     
-<input type="hidden" id="wallet" name="ownerWallet" value={applymodalInfo.wallet} />
-<input type="hidden" id="jobtitle" name="jobTitle" value={applymodalInfo.title} />
+<input type="hidden" id="ownerWallet" name="ownerWallet" value={applymodalInfo.wallet} />
+<input type="hidden" id="jobTitle" name="jobTitle" value={applymodalInfo.title} />
 
 <div className="contacts">
 <label htmlFor="email"> E-mail Address: </label>
-  <input id="contact" type="email" name="email" />
+  <input id="email" type="email" name="email" />
 <br></br>
 
 <hr></hr>
 
 <label htmlFor="discord"> Discord ID: </label>
-  <input id="contact" type="text" name="discord"  />
+  <input id="discord" type="text" name="discord"  />
   <br></br>
   <hr></hr>
 
   <label htmlFor="twitter"> Twitter: </label>
-  <input id="contact" type="text" name="twitter"  />
+  <input id="twitter" type="text" name="twitter"  />
   <br></br>
   <hr></hr>
 
@@ -186,7 +249,7 @@ const ApplyModal = () => {
 <br></br>
   
 
-  <button type="submit" className="postbutton">Apply to Job</button>
+  <button type="submit" className="postbutton" >Apply to Job</button>
 </form>
       
          </Modal.Body>
@@ -205,6 +268,34 @@ const ApplyModal = () => {
  
 }
 
+const ModalConfirm = () => {
+  return (
+    <Modal show = { confirmshow } onHide= {confirmhandleClose}>
+
+      <Modal.Header confirmcloseButton>
+
+        <Modal.Title>Your application was successfully submitted!</Modal.Title>
+        <hr></hr>
+
+        <Modal.Body>
+          <p>
+          Keep an eye on your contact informations provided for more details.
+          </p>
+           </Modal.Body>
+
+        <Modal.Footer> 
+
+          <Button onClick={confirmhandleShow} variant="secondary">Close</Button>
+        </Modal.Footer>
+
+
+        </Modal.Header>
+
+
+    </Modal>
+  )
+}
+
 
 
 if (error) return <div>Failed to load</div>
@@ -220,6 +311,7 @@ if (!data) return <div>Please connect a wallet to see Dealz...</div>
 
         {show ? <ModalContent /> : null}
         {applyshow ? <ApplyModal /> : null}
+        {confirmshow ? <ModalConfirm /> : null}
         
 
           <br></br>
