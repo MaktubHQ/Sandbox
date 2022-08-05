@@ -139,6 +139,7 @@ const handleSubmit = async (event) => {
 
   handleClose()
   applyhandleClose()
+  confirmhandleShow()
 
   // Get data from the form.
   const data = {
@@ -178,8 +179,6 @@ const handleSubmit = async (event) => {
   const result = await response.json()
   console.log(result)
   console.log(data)
-
-  confirmhandleShow()
   
 
 }
