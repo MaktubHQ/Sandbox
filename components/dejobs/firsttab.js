@@ -166,6 +166,7 @@ const handleSubmit = async (event) => {
     // Tell the server we're sending JSON.
     headers: {
       'Content-Type': 'application/json',
+      'Accept': 'application/json'
     },
     // Body of the request is the JSON data we created above.
     body: JSONdata,
