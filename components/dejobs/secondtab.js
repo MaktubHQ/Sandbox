@@ -172,12 +172,12 @@ const JobListingForm = () => {
   
         <Modal.Header confirmcloseButton>
   
-          <Modal.Title>Your application was successfully submitted!</Modal.Title>
+          <Modal.Title>Your job was successfully uploaded!</Modal.Title>
           <hr></hr>
   
           <Modal.Body>
             <p>
-            Keep an eye on your contact informations provided for more details.
+            Keep an eye on * My Applications * tab in your profile for applications to your job.
             </p>
              </Modal.Body>
   
