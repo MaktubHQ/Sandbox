@@ -58,6 +58,9 @@ function FirstTab({walletAddress}) {
  
 
   const columns = [{
+    dataField: 'project',
+    text: 'Organization'
+  },{
   dataField: 'role',
   text: 'Job Title',
   filter: textFilter()
