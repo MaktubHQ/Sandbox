@@ -12,6 +12,10 @@ import { useRouter } from 'next/router'
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -80,16 +84,13 @@ function FirstTab({walletAddress}) {
 },
 ];
 
-const rowEvents = {
-  onClick: (e, row) => {
+const rowEvents = (row) => {
     console.log(row)
     setModalInfo(row)
     toggleTrueFalse()
     applysetModalInfo(row)
     // applytoggleTrueFalse()
     
-
-  }
 }
 
 const triggerApply = {
@@ -309,6 +310,27 @@ if (!data) return <div>Please connect a wallet to see Dealz...</div>
   return (
       <div className='container'>
         {console.log(data)}
+
+        <Row xs={1} md={2} className="g-4">
+      {Array.from({ length: data.data.length }).map((_, idx) => (
+        <Col>
+          <Card className='cards' onClick={event => {rowEvents(data.data[idx])}}>
+            {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
+            <Card.Body>
+              <Card.Subtitle className='cardtitle' titleTypographyProps={{variant:'h5' }}>{data.data[idx].title}</Card.Subtitle>
+              <Card.Text>
+              <br></br>
+              {data.data[idx].project ? data.data[idx].project : "----"}
+              <br></br>
+              {data.data[idx].role ? data.data[idx].role : "----"}
+              <br></br>
+              {data.data[idx].budget ? data.data[idx].budget : "----" }
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
        
         <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} filter={ filterFactory()} />
 

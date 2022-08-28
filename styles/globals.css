@@ -699,4 +699,10 @@ nav a:active{
   nav .wallet {
     margin-left: auto;
   }
+  
+  .cardtitle.h5 {
+    font-size: 25px;
+  }
+  
+  
 }
