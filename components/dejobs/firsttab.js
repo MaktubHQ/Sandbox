@@ -317,22 +317,20 @@ if (!data) return <div>Please connect a wallet to see Dealz...</div>
           <Card className='cards' onClick={event => {rowEvents(data.data[idx])}}>
             {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
             <Card.Body>
-              <Card.Subtitle className='cardtitle' titleTypographyProps={{variant:'h5' }}>{data.data[idx].title}</Card.Subtitle>
+              <Card.Subtitle className='cardtitle' numberOfLines={1} style={{fontSize:15}}>{data.data[idx].title.substring(0, 75) + " ..."}</Card.Subtitle>
               <Card.Text>
               <br></br>
-              {data.data[idx].project ? data.data[idx].project : "----"}
+             <span className='oneliner'>Org:  </span> {" " + (data.data[idx].project ? data.data[idx].project : "----")}
               <br></br>
-              {data.data[idx].role ? data.data[idx].role : "----"}
+              <span className='oneliner'>Role: </span> {" " + (data.data[idx].role ? data.data[idx].role : "----")}
               <br></br>
-              {data.data[idx].budget ? data.data[idx].budget : "----" }
+              <span className='oneliner'> Budget: </span> {" " + (data.data[idx].budget ? data.data[idx].budget : "----") }
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
       ))}
     </Row>
-       
-        <BootstrapTable keyField="index" data={ data.data } columns={ columns } pagination={ paginationFactory() } rowEvents={rowEvents} filter={ filterFactory()} />
 
         {show ? <ModalContent /> : null}
         {applyshow ? <ApplyModal /> : null}

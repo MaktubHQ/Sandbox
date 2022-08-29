@@ -700,8 +700,14 @@ nav a:active{
     margin-left: auto;
   }
   
-  .cardtitle.h5 {
-    font-size: 25px;
+  .cardtitle {
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 10px;
+  }
+  .oneliner{
+    font-weight: bold;
   }
   
   
