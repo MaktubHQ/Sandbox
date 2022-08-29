@@ -709,6 +709,9 @@ nav a:active{
   .oneliner{
     font-weight: bold;
   }
+  .me-auto{
+    padding: 20px;
+  }
   
   
 }

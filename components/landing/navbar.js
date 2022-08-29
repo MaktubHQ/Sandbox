@@ -2,10 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ConnectWallet from "./connectwallet";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 
-const Navbar = () => {
+const Navbars = () => {
   
 let id = ""
       if (ConnectWallet.showProfile){
@@ -13,49 +17,73 @@ let id = ""
       }
 
     return (
-        <nav>
-            <div className="logo">
+        <Navbar bg="white" expand="lg">
+        <Container>
+          <Navbar.Brand href="#home">
+              <div className="logo">
                 <Link href='/'>
                     <a>
                     <Image src='/maktub.png' alt="Logo" className="logo" width='120px' height='120px'/>
                     </a>
 
-                </Link>
-                    
-                
-                
+                </Link>   
             </div>
-            <div className="links">
-            <Link href='/demo'>
-            <a>Demo</a>
+            </Navbar.Brand>
 
-                </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto" >
+              <Nav.Link href="/demo" className="links">Demo</Nav.Link>
+              <Nav.Link href="/dejobs" className="links">DeJobs</Nav.Link>
+              <Nav.Link href="/profile" className="links">Profile</Nav.Link> 
+            </Nav>
+
+            <Nav.Item className="d-flex">
+                  <a><ConnectWallet/></a>
+            </Nav.Item>
+
+
+
             
-                <Link href='/dejobs'>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+
+
+
+        // <nav>
+            
+        //     <div className="links">
+        //     <Link href='/demo'>
+        //     <a>Demo</a>
+
+        //         </Link>
+            
+        //         <Link href='/dejobs'>
                     
-            <a>Jobs</a>
+        //     <a>Jobs</a>
 
-                </Link>
+        //         </Link>
 
 
-                <Link className={ConnectWallet.showProfile ? "showProfile" : "hideProfile"} href='/profile'>
+        //         <Link className={ConnectWallet.showProfile ? "showProfile" : "hideProfile"} href='/profile'>
                     
-                    <a>Profile</a>
+        //             <a>Profile</a>
         
-                        </Link>
+        //                 </Link>
 
-            </div>
-            <div className="wallet">
-            <a><ConnectWallet/></a>
+        //     </div>
+        //     <div className="wallet">
+        //     <a><ConnectWallet/></a>
 
-            </div>
+        //     </div>
            
 
-        </nav>
+        // </nav>
       
   
   
     );
   };
   
-  export default Navbar;
+  export default Navbars;

@@ -317,7 +317,7 @@ if (!data) return <div>Please connect a wallet to see Dealz...</div>
           <Card className='cards' onClick={event => {rowEvents(data.data[idx])}}>
             {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
             <Card.Body>
-              <Card.Subtitle className='cardtitle' numberOfLines={1} style={{fontSize:15}}>{data.data[idx].title.substring(0, 75) + " ..."}</Card.Subtitle>
+              <Card.Subtitle className='cardtitle' numberOfLines={1} style={{fontSize:15, textAlign:"center"}}>{data.data[idx].title.substring(0, 75) + " ..."}</Card.Subtitle>
               <Card.Text>
               <br></br>
              <span className='oneliner'>Org:  </span> {" " + (data.data[idx].project ? data.data[idx].project : "----")}

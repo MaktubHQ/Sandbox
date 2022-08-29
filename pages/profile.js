@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Footer from '../components/landing/footer'
-import Navbar from '../components/landing/navbar'
+import Navbars from '../components/landing/navbar'
 import FirstTab from "../components/profile/firsttab";
 import SecondTab from "../components/profile/secondtab";
 import styles from '../styles/Home.module.css'
@@ -22,7 +22,7 @@ const Profile = () => {
     return ( 
         <div className={styles.container}>
 
-      <Navbar />
+      <Navbars />
       <div className="Tabs">
       <ul className="nav">
         <li

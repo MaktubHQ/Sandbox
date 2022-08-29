@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Footer from '../components/landing/footer'
-import Navbar from '../components/landing/navbar'
+import Navbars from '../components/landing/navbar'
 import FirstTab from "../components/demo/firsttab";
 import SecondTab from "../components/demo/secondtab";
 import styles from '../styles/Home.module.css'
@@ -21,7 +21,7 @@ const Demo = () => {
     return ( 
         <div className={styles.container}>
 
-      <Navbar />
+      <Navbars />
       <div className="Tabs">
       <ul className="nav">
         <li
