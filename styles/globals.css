@@ -700,17 +700,21 @@ nav a:active{
     margin-left: auto;
   }
   
-  .cardtitle {
-    white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 10px;
-  }
   .oneliner{
     font-weight: bold;
   }
   .me-auto{
     padding: 20px;
+  }
+  .card-text{
+    overflow:hidden;
+    width:auto;
+    display:inline;
+  }
+  .JobBox{
+    overflow:hidden;
+    width:auto;
+    display:inline;
   }
   
   

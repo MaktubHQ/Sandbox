@@ -7,6 +7,8 @@ import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useRouter } from 'next/router'
+import Image from 'next/image';
+import Link from 'next/link';
 
 // es6
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
@@ -307,24 +309,48 @@ if (!data) return <div>Please connect a wallet to see Dealz...</div>
 
 
 
+
   return (
       <div className='container'>
         {console.log(data)}
 
         <Row xs={1} md={2} className="g-4">
       {Array.from({ length: data.data.length }).map((_, idx) => (
+        
         <Col>
           <Card className='cards' onClick={event => {rowEvents(data.data[idx])}}>
             {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
             <Card.Body>
-              <Card.Subtitle className='cardtitle' numberOfLines={1} style={{fontSize:15, textAlign:"center"}}>{data.data[idx].title.substring(0, 75) + " ..."}</Card.Subtitle>
+              <Card.Title className='cardtitle' numberOfLines={1} style={{fontSize:15, textAlign:"center"}}>{data.data[idx].title.substring(0, 75)}</Card.Title>
+              <Card.Subtitle className='cardtitle' numberOfLines={1} style={{fontSize:12, textAlign:"center"}}>{" " + (data.data[idx].project ? data.data[idx].project : "----")}</Card.Subtitle>
               <Card.Text>
+              
+             
               <br></br>
-             <span className='oneliner'>Org:  </span> {" " + (data.data[idx].project ? data.data[idx].project : "----")}
+              <div className='JobBox'>
+              <div className='JobBox'>
+              <span className='oneliner'><Image src="/role.svg" height={20} width={20}/></span> {(data.data[idx].role ? data.data[idx].role : "----")}
               <br></br>
-              <span className='oneliner'>Role: </span> {" " + (data.data[idx].role ? data.data[idx].role : "----")}
+              </div>
+             <div className='JobBox'>
+             <span className='oneliner'><Image src="/budget.svg" height={20} width={20}/> </span> {(data.data[idx].budget ? data.data[idx].budget : "----") }
               <br></br>
-              <span className='oneliner'> Budget: </span> {" " + (data.data[idx].budget ? data.data[idx].budget : "----") }
+             </div>
+              <div className='JobBox'>
+              <span className='oneliner'><Image src="/discord.svg" height={20} width={20}/></span> {(data.data[idx].discord ? data.data[idx].discord : "----")}
+              <br></br>
+
+              </div>
+              <div className='JobBox'>
+              
+                <a href={"https://twitter.com/" + data.data[idx].twitter} style={{fontSize: 15}}> 
+              <span className='oneliner'><Image src="/twitter.svg" height={20} width={20}/></span> {(data.data[idx].twitter ? data.data[idx].twitter : "----")}
+              </a>
+              </div>
+
+              </div>
+            
+             
               </Card.Text>
             </Card.Body>
           </Card>
