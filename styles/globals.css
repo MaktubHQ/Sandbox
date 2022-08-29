@@ -250,7 +250,7 @@ border: 3px solid transparent;
 padding: 10px;
 }
 .heroinformation{
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   padding-bottom: 46px;
@@ -671,6 +671,9 @@ nav a:active{
 }
 
 @media only screen and (max-width: 600px) {
+  body{
+    font-size: 15px;
+  }
   a{
     font-size: 15px;
   }
@@ -706,16 +709,38 @@ nav a:active{
   .me-auto{
     padding: 20px;
   }
-  .card-text{
-    overflow:hidden;
-    width:auto;
-    display:inline;
+  
+  .herotitle{
+    font-size: 30px;
+    line-height: 115%;
+    margin-bottom: 24px;
   }
-  .JobBox{
-    overflow:hidden;
-    width:auto;
-    display:inline;
+  .hero{
+    position: relative;
+    font-size: 50px;
+    line-height: 115%;
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 150%;
+    /* max-width: 484px; */
+    margin-bottom: 14px;
+  }
+  .herotext{
+    font-size: 12px;
+    line-height: 150%;
+    max-width: 484px;
+    margin-bottom: 14px;
   }
   
-  
+}
+
+.card-text{
+  overflow:hidden;
+  width:auto;
+  display:inline;
+}
+.JobBox{
+  overflow:hidden;
+  width:auto;
+  display:inline;
 }

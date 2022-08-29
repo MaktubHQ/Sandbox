@@ -8,12 +8,12 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">Deal 🤝 </span>
+            <span className="herotitle">3Lance</span>
           </h1>
           <p className="herotext">
-            Need diamond hands on your team?
+          Decentralized P2P Career Management Hub with payments soon managed via smart contracts.
           </p>
-          <p className="herotextred">Network with your 💎 🙌 homies. Coming soon!</p>
+          <p className="herotextred">Freelance, EduPrograms, Finance!</p>
                 </div>
           <div className='float-child'>
           <Image src="/contract.png" alt="Contract" width='500px' height='500px'/>
