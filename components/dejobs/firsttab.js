@@ -305,7 +305,7 @@ const ModalConfirm = () => {
 
 
 if (error) return <div>Failed to load</div>
-if (!data) return <div>Please connect a wallet to see Dealz...</div>
+if (!data) return <div>Magic is loading...</div>
 
 
 
