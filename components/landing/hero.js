@@ -47,7 +47,7 @@ const Hero = () => (
           <p className="herotextred">Propose a partnership to our community.</p>
           <br></br>
           
-          <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">Active Deals</Link>
+          <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">Jobs</Link>
           </div>
           <div className='float-child'>
           <Image src='/postjob.png' alt="Post a Job" className="images" width='800px' height='500px'/>
