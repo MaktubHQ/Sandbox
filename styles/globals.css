@@ -680,6 +680,7 @@ nav a:active{
 }
 
 @media only screen and (max-width: 600px) {
+ 
   body{
     font-size: 15px;
   }
@@ -739,6 +740,14 @@ nav a:active{
     line-height: 150%;
     max-width: 484px;
     margin-bottom: 14px;
+  }
+  .connect-wallet-button {
+    color: black;
+    background: -webkit-linear-gradient(left, #00FFA3, #03E1FF);
+    background-size: 200% 200%;
+    animation: gradient-animation 4s ease infinite;
+    font-size: 5px
+    
   }
   
 }
@@ -802,4 +811,7 @@ nav a:active{
 .profilePage{
   margin: auto;
   width: 50%;
+}
+.edutitle{
+  text-align: center;
 }

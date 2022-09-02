@@ -36,7 +36,7 @@ let id = ""
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" >
-              <Nav.Link href="/education" className="links">Edu</Nav.Link>
+              <Nav.Link href="/education" className="links">Masterclass</Nav.Link>
               <Nav.Link href="/dejobs" className="links">Jobs</Nav.Link>
               <Nav.Link href="/profile" className="links">Profile</Nav.Link> 
             </Nav>

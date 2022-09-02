@@ -27,8 +27,8 @@ if (!data) return <div>Magic is loading...</div>
           {console.log(data.data)}
 
       <Navbars />
+      <h5 className="edutitle">Welcome to Masterclass!</h5>
       <div className="Tabs">
-
       <Row xs={1} md={2} className="g-4">
       {Array.from({ length: 4 }).map((_, idx) => (
         // eslint-disable-next-line react/jsx-key
