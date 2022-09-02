@@ -6,10 +6,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import { useSession, signIn, signOut } from "next-auth/react";
+import Login from "./login-btn";
 
 
 const Navbars = () => {
+
+  const {session, loading} = useSession()
   
 let id = ""
       if (ConnectWallet.showProfile){
@@ -33,13 +36,13 @@ let id = ""
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" >
-              <Nav.Link href="/demo" className="links">Demo</Nav.Link>
-              <Nav.Link href="/dejobs" className="links">DeJobs</Nav.Link>
+              <Nav.Link href="/education" className="links">Edu</Nav.Link>
+              <Nav.Link href="/dejobs" className="links">Jobs</Nav.Link>
               <Nav.Link href="/profile" className="links">Profile</Nav.Link> 
             </Nav>
 
-            <Nav.Item className="d-flex">
-                  <a><ConnectWallet/></a>
+            <Nav.Item >
+                 <Login/>
             </Nav.Item>
 
 

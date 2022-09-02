@@ -310,7 +310,16 @@ svg {
 
  .button{
   color: black;
-  background: -webkit-linear-gradient(#00FFA3, #03E1FF);
+  background: -webkit-linear-gradient(#69E2FF, #1387D2);
+  padding: 15px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 25px;
+  font-weight: 900;
+}
+.redbutton{
+  color: black;
+  background: -webkit-linear-gradient(#ff8867, #ff52ff);
   padding: 15px;
   width: 80%;
   margin: 0 auto;
@@ -743,4 +752,54 @@ nav a:active{
   overflow:hidden;
   width:auto;
   display:inline;
+}
+
+.signedInStatus {
+  display: block;
+  min-height: 4rem;
+  width: 100%;
+}
+
+.loading,
+.loaded {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  overflow: hidden;
+  border-radius: 0 0 0.6rem 0.6rem;
+  padding: 0.6rem 1rem;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in;
+}
+
+.loading {
+  top: -2rem;
+  opacity: 0;
+}
+.navItems {
+  margin-bottom: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.navItem {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .nav-item{
+    display: flex;
+    width: 30%;
+  }
+}
+
+.profileWallet, .username, .connectsocials{
+  display: inline-block;
+  padding: 20px;
+}
+.profilePage{
+  margin: auto;
+  width: 50%;
 }

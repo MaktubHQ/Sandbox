@@ -8,6 +8,7 @@ import "@fontsource/open-sans";
 import "@fontsource/open-sans/500.css"; // Weight 500.
 //import "@fontsource/open-sans/900-italic.css";
 
+
 import React, { FC, useMemo } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
@@ -27,6 +28,7 @@ import {
 } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 import { createDefaultAuthorizationResultCache, SolanaMobileWalletAdapter } from '@solana-mobile/wallet-adapter-mobile';
+import { SessionProvider } from "next-auth/react"
 
 // Default styles that can be overridden by your app
 require('@solana/wallet-adapter-react-ui/styles.css');
@@ -34,7 +36,10 @@ require('@solana/wallet-adapter-react-ui/styles.css');
 
 
 
-function MyApp({ Component, pageProps }) {
+export default function App({
+    Component,
+    pageProps, session,
+  })  {
   
 
 
@@ -63,6 +68,7 @@ function MyApp({ Component, pageProps }) {
     );
 
     return (
+        <SessionProvider session={session}>
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>
@@ -70,6 +76,6 @@ function MyApp({ Component, pageProps }) {
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
+        </SessionProvider>
     );
 };
-export default MyApp
