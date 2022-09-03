@@ -804,7 +804,7 @@ nav a:active{
   }
 }
 
-.profileWallet, .username, .connectsocials{
+.profileWallet, .username, .connectsocials, .walletSave{
   display: inline-block;
   padding: 20px;
 }
