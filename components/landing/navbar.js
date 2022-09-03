@@ -52,38 +52,6 @@ let id = ""
         </Container>
       </Navbar>
 
-
-
-        // <nav>
-            
-        //     <div className="links">
-        //     <Link href='/demo'>
-        //     <a>Demo</a>
-
-        //         </Link>
-            
-        //         <Link href='/dejobs'>
-                    
-        //     <a>Jobs</a>
-
-        //         </Link>
-
-
-        //         <Link className={ConnectWallet.showProfile ? "showProfile" : "hideProfile"} href='/profile'>
-                    
-        //             <a>Profile</a>
-        
-        //                 </Link>
-
-        //     </div>
-        //     <div className="wallet">
-        //     <a><ConnectWallet/></a>
-
-        //     </div>
-           
-
-        // </nav>
-      
   
   
     );

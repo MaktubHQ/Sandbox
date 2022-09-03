@@ -12,7 +12,7 @@ export default async function handler(req, res) {
       
       break;
     case "GET":
-      const joblist = await db.collection("profiles").find({}).toArray();
+      const joblist = await db.collection("education").find({}).toArray();
       res.json({ status: 200, data: joblist });
       break;
   }
