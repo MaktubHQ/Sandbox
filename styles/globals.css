@@ -247,30 +247,31 @@ footer {
   margin: auto;
 width: 100%;
 border: 3px solid transparent;
-padding: 10px;
+
 }
 .heroinformation{
-  width: 100%;
-  margin: 0 auto;
+  width: 70%;
+  margin: auto;
   position: relative;
   padding-bottom: 46px;
   border: 3px solid transparent;
-  padding: 20px;
   display: flex;
   
   border: 3px solid transparent;
-  padding: 30px;
+  vertical-align: middle;
 }
 .herotitle{
   font-size: 50px;
   line-height: 115%;
-  margin-bottom: 24px;
+  vertical-align: middle;
+  
 }
 .herotext{
   font-size: 24px;
   line-height: 150%;
   max-width: 484px;
   margin-bottom: 14px;
+  vertical-align: middle;
 }
 .herotextred{
   color: white;
@@ -278,6 +279,7 @@ padding: 10px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
+  vertical-align: middle;
 }
 
 .heroimg{
@@ -288,6 +290,7 @@ padding: 10px;
   right: 10%;
   bottom: -80px;
   display: block;
+  vertical-align: middle;
 }
 .herobackground{
   position: absolute;
@@ -300,7 +303,6 @@ padding: 10px;
 .float-child {
   width: 50%;
   float: left;
-  padding: 20px;
   border: 2px solid transparent;
 }  
 svg {
@@ -724,6 +726,7 @@ nav a:active{
     font-size: 30px;
     line-height: 115%;
     margin-bottom: 24px;
+    vertical-align: middle
   }
   .hero{
     position: relative;
@@ -734,6 +737,7 @@ nav a:active{
     line-height: 150%;
     /* max-width: 484px; */
     margin-bottom: 14px;
+    vertical-align: middle
   }
   .herotext{
     font-size: 12px;

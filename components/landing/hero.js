@@ -16,22 +16,22 @@ const Hero = () => (
           <p className="herotextred">Freelance, EduPrograms, Finance!</p>
                 </div>
           <div className='float-child'>
-          <Image src="/contract.png" alt="Contract" width='500px' height='500px'/>
+          <Image src="/banner.png" alt="Contract" width='500px' height='500px'/>
               </div>
         </div>
 
         <hr></hr>
         <div className="heroinformation">
               <div className='float-child'>
-              <Image src='/dejobs.png' alt="DeJobs" className="images" width='800px' height='500px' />
+              <Image src='/web3.png' alt="DeJobs" className="images" width='800px' height='500px' />
               </div>
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">Job Listings</span>
+            <span className="herotitle">Masterclass</span>
           </h1> 
-          <p className="herotextred">View all jobs posted by community members.</p>
+          <p className="herotextred">Break into web3 as a developer, NFT enthusiast, or curious bee.</p>
           <br></br>
-          <Link href="/demo" style={{ textDecoration: 'none'}} className="button">Demo</Link>
+          <Link href="/demo" style={{ textDecoration: 'none'}} className="button">Learn</Link>
           </div>
           
             
@@ -42,15 +42,15 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">Propose a Job</span>
+            <span className="herotitle">Jobs</span>
           </h1>
-          <p className="herotextred">Propose a partnership to our community.</p>
+          <p className="herotextred">Find job opportunities or post new ones for our community.</p>
           <br></br>
           
-          <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">Jobs</Link>
+          <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">Earn</Link>
           </div>
           <div className='float-child'>
-          <Image src='/postjob.png' alt="Post a Job" className="images" width='800px' height='500px'/>
+          <Image src='/jobs.png' alt="Post a Job" className="images" width='800px' height='500px'/>
               </div>
                 </div>
           
