@@ -31,7 +31,7 @@ const Hero = () => (
           </h1> 
           <p className="herotextred">Break into web3 as a developer, NFT enthusiast, or curious bee.</p>
           <br></br>
-          <Link href="/demo" style={{ textDecoration: 'none'}} className="button">Learn</Link>
+          <Link href="/education" style={{ textDecoration: 'none'}} className="button">Learn</Link>
           </div>
           
             
