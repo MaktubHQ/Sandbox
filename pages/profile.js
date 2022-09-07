@@ -184,13 +184,6 @@ console.log(data)
 
 
       </div>
-
-      <div className="userapplications">
-
-
-
-    </div>
-
       <Footer />
 
 
