@@ -2,7 +2,7 @@ import React from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
-const handler = async () => {
+const handler = async (session) => {
   // Stop the form from submitting and refreshing the page.
 
   
@@ -44,9 +44,9 @@ console.log(session.user.email)
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-const test = () =>{
+const test = (session) =>{
   signIn()
-handler()
+handler(session)
   
 }
 
@@ -66,7 +66,7 @@ const Login = () => {
     return (
       <>
         Not signed in <br />
-        <button className="button" onClick={() => test()}>Sign in</button>
+        <button className="button" onClick={() => test(session)}>Sign in</button>
       </>
     )
   }
