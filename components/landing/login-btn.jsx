@@ -2,9 +2,8 @@ import React from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
-const handleSubmit = async (event) => {
+const handler = async () => {
   // Stop the form from submitting and refreshing the page.
-  event.preventDefault()
 
   
 console.log(session.user.email)
@@ -12,10 +11,6 @@ console.log(session.user.email)
   // Get data from the form.
   const data = {
     email: session.user.email,
-    username: event.target.username.value,
-    wallet: event.target.wallet.value,
-    discord: event.target.discord.value,
-    twitter: event.target.twitter.value,
   }
 
   // Send the data to the server in JSON format.
@@ -51,7 +46,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 const test = () =>{
   signIn()
-handleSubmit()
+handler()
   
 }
 
