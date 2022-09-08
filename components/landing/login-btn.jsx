@@ -1,10 +1,13 @@
 import React from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 
+
 const handleSubmit = async (event) => {
   // Stop the form from submitting and refreshing the page.
   event.preventDefault()
 
+  
+console.log(session.user.email)
 
   // Get data from the form.
   const data = {
