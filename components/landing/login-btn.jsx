@@ -9,6 +9,10 @@ const handleSubmit = async (event) => {
   // Get data from the form.
   const data = {
     email: session.user.email,
+    username: event.target.username.value,
+    wallet: event.target.wallet.value,
+    discord: event.target.discord.value,
+    twitter: event.target.twitter.value,
 
   }
 
@@ -16,7 +20,7 @@ const handleSubmit = async (event) => {
   const JSONdata = JSON.stringify(data)
 
   // API endpoint where we send form data.
-  const endpoint = '/../../pages/api/profile'
+  const endpoint = '/../../../pages/api/profile'
 
   // Form the request for sending data to the server.
   const options = {
