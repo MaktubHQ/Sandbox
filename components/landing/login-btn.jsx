@@ -13,7 +13,6 @@ const handleSubmit = async (event) => {
     wallet: event.target.wallet.value,
     discord: event.target.discord.value,
     twitter: event.target.twitter.value,
-
   }
 
   // Send the data to the server in JSON format.
@@ -48,8 +47,9 @@ const handleSubmit = async (event) => {
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 const test = () =>{
-handleSubmit()
   signIn()
+handleSubmit()
+  
 }
 
 const Login = () => {
