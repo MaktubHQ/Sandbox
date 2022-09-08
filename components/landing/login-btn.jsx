@@ -65,7 +65,7 @@ const Login = () => {
   else{
     return (
       <>
-        Not signed in <br />
+        <br />
         <button className="button" onClick={() => test(session)}>Sign in</button>
       </>
     )
