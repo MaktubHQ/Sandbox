@@ -6,6 +6,7 @@ const Hero = () => (
     <div className="hero">
       <div className="herocontainer">
     
+    {/* Hero section starts at the picture of surprised lady. */}
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
@@ -22,6 +23,7 @@ const Hero = () => (
               </div>
         </div>
 
+{/* Section 2 of Hero highlights Masterclass. */}
         <hr></hr>
         <div className="heroinformation">
               <div className='float-child-image'>
@@ -39,6 +41,7 @@ const Hero = () => (
             
         </div>
   
+  {/* Section 3 of Hero highlights Jobs. */}
         <hr></hr>
   
         <div className="heroinformation">

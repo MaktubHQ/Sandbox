@@ -9,6 +9,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { useRouter } from 'next/router'
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 // es6
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
@@ -17,6 +18,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Login from '../accessories/login-btn';
 
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
@@ -61,30 +63,6 @@ function FirstTab({walletAddress}) {
     confirmsetShowModal(confirmhandleShow)
   }
 
- 
-
-  const columns = [{
-    dataField: 'project',
-    text: 'Organization'
-  },{
-  dataField: 'role',
-  text: 'Job Title',
-  filter: textFilter()
-}, {
-  dataField: 'title',
-  text: 'Details'
-}, {
-  dataField: 'budget',
-  text: 'Pay'
-},
-, {
-  dataField: 'wallet',
-  hidden: true
-},{
-  dataField: 'jobdescription',
-  hidden: true
-},
-];
 
 const rowEvents = (row) => {
     console.log(row)
@@ -102,6 +80,7 @@ const triggerApply = {
   }
 }
 
+{/* This function handles when you click a job. Loads a pop up with single-job details. */}
 const ModalContent = () => {
   return (
     <Modal show = { show } onHide= {handleClose}>
@@ -139,62 +118,20 @@ const ModalContent = () => {
     </Modal>
   )
 }
-const handleSubmit = async (event) => {
-  // Stop the form from submitting and refreshing the page.
-  event.preventDefault()
 
-  handleClose()
-  applyhandleClose()
-  confirmhandleShow()
-
-  // Get data from the form.
-  const data = {
-    ownerWallet: event.target.ownerWallet.value,
-    jobTitle: event.target.jobTitle.value,
-    email: event.target.email.value,
-    discord: event.target.discord.value,
-    twitter: event.target.twitter.value,
-    intro: event.target.intro.value,
-    file: event.target.file.value,
-
-  }
-
-  // Send the data to the server in JSON format.
-  const JSONdata = JSON.stringify(data)
-
-  // API endpoint where we send form data.
-  const endpoint = '/api/profileapplications'
-
-  // Form the request for sending data to the server.
-  const options = {
-    // The method is POST because we are sending data.
-    method: 'POST',
-    // Tell the server we're sending JSON.
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    // Body of the request is the JSON data we created above.
-    body: JSONdata,
-  }
-
-  // Send the form data to our forms API on Vercel and get a response.
-  const response = await fetch(endpoint, options)
-
-  // Get the response data from server as JSON.
-  // If server returns the name submitted, that means the form works.
-  const result = await response.json()
-  console.log(result)
-  console.log(data)
-  
-
-}
-
-const router = useRouter()
-
-
-
+{/* This function handles opening the application form */}
 const ApplyModal = () => {
+  const { data: session } = useSession()
+  if(!session) {
+    setShow(false)
+
+  return( 
+    <Modal show = { applyshow } onHide= {applyhandleClose}>
+<div><p>Please sign in to apply :)</p><Login/></div>
+    </Modal>
+  )
+  }
+  else{
   return (
     <Modal show = { applyshow } onHide= {applyhandleClose}>
 
@@ -271,9 +208,11 @@ const ApplyModal = () => {
 
   </Modal>
   )
+}
  
 }
 
+{/* This function handles a confirmation screen for user after apply button clicked. */}
 const ModalConfirm = () => {
   return (
     <Modal show = { confirmshow } onHide= {confirmhandleClose}>
@@ -302,7 +241,65 @@ const ModalConfirm = () => {
   )
 }
 
+{/* This function handles submitting the form to our DB when you apply for a job. */}
+const handleSubmit = async (event) => {
+  // Stop the form from submitting and refreshing the page.
+  event.preventDefault()
 
+  handleClose()
+  applyhandleClose()
+  confirmhandleShow()
+
+  // Get data from the form.
+  const data = {
+    ownerWallet: event.target.ownerWallet.value,
+    jobTitle: event.target.jobTitle.value,
+    email: event.target.email.value,
+    discord: event.target.discord.value,
+    twitter: event.target.twitter.value,
+    intro: event.target.intro.value,
+    file: event.target.file.value,
+
+  }
+
+  // Send the data to the server in JSON format.
+  const JSONdata = JSON.stringify(data)
+
+  // API endpoint where we send form data.
+  const endpoint = '/api/profileapplications'
+
+  // Form the request for sending data to the server.
+  const options = {
+    // The method is POST because we are sending data.
+    method: 'POST',
+    // Tell the server we're sending JSON.
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    // Body of the request is the JSON data we created above.
+    body: JSONdata,
+  }
+
+  // Send the form data to our forms API on Vercel and get a response.
+  const response = await fetch(endpoint, options)
+
+  // Get the response data from server as JSON.
+  // If server returns the name submitted, that means the form works.
+  const result = await response.json()
+  console.log(result)
+  console.log(data)
+  
+
+}
+
+const router = useRouter()
+
+
+
+
+
+{/* These checks make sure code doesn't break. There is latency between DB and our website, so DATA could be null for sometime. */}
 
 if (error) return <div>Failed to load</div>
 if (!data) return <div>Magic is loading...</div>
@@ -313,6 +310,9 @@ if (!data) return <div>Magic is loading...</div>
   return (
       <div className='container'>
         {console.log(data)}
+
+
+        {/* This card concept was created by React Bootstrap. We dynamically set the data shown using our DB. */}
 
         <Row xs={1} md={2} className="g-4">
       {Array.from({ length: data.data.length }).map((_, idx) => (
@@ -358,6 +358,8 @@ if (!data) return <div>Magic is loading...</div>
       ))}
     </Row>
 
+
+  {/* Checks when to display popups based on user clicking buttons. */}
         {show ? <ModalContent /> : null}
         {applyshow ? <ApplyModal /> : null}
         {confirmshow ? <ModalConfirm /> : null}
@@ -372,7 +374,7 @@ if (!data) return <div>Magic is loading...</div>
           }}>
 
             
-          <p>Coming soon 😉</p>
+          <p>Payment smart contracts coming soon 😉</p>
           </div>
           
       </div>

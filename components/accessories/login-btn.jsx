@@ -2,6 +2,8 @@ import React from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
+// Working on this function to store user info in DB on initial sign-in//
+
 const handler = async (session) => {
   // Stop the form from submitting and refreshing the page.
 
@@ -41,8 +43,6 @@ console.log(session.user.email)
   console.log(result)
   console.log(data)
 }
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 const test = (session) =>{
   signIn()

@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import ConnectWallet from "./connectwallet";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,6 +11,8 @@ import Login from "./login-btn";
 const Navbars = () => {
 
   const {session, loading, status} = useSession()
+
+  {/* This IF is designed to -HIDE- Profile if signed out. */}
   
   if (status === "unauthenticated") {
     return (
@@ -34,7 +34,6 @@ const Navbars = () => {
           <Nav className="me-auto" >
             <Nav.Link href="/masterclass" className="links">Masterclass</Nav.Link>
             <Nav.Link href="/jobs" className="links">Jobs</Nav.Link>
-            {/* <Nav.Link href="/profile" className="links">Profile</Nav.Link>  */}
           </Nav>
 
           <Nav.Item >
@@ -53,7 +52,9 @@ const Navbars = () => {
   );
   }
   else{
+    {/* This ELSE is designed to -SHOW- Profile if signed in. */}
     return (
+      
       <Navbar bg="white" expand="lg">
       <Container>
         <Navbar.Brand href="#home">

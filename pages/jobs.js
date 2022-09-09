@@ -40,6 +40,7 @@ const DeJobs = () => {
       </ul>
  
       <div className="outlet">
+        {/* This function handles when we toggle the Job page between Listings and Posting a job. */}
         {activeTab === "tab1" ? <FirstTab /> : <SecondTab />}
       </div>
     </div>

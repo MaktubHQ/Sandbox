@@ -3,10 +3,9 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { Modal, Button } from "react-bootstrap";
+import { useSession } from "next-auth/react";
+import Login from "../accessories/login-btn";
 
-function changeBackground(e) {
-  e.target.style.color = 'black';
-}
 
 function SecondTab() {
 
@@ -23,10 +22,14 @@ function SecondTab() {
 const JobListingForm = () => {
 
   const { connect, publicKey } = useWallet()
+  const { data: session } = useSession()
 
-  if (!publicKey) return <div>Connect a wallet to post a Deal...</div>
+{/* This function checks if a user is signed in to access writing data to our DB with actions(Post Job or Apply to Job). */}
+  if (!session) return <div>Please sign in! <Login/></div>
 
   
+
+  {/* This function handles submitting a job form details to our DB.*/}
   const handleSubmit = async (event) => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault()
@@ -147,13 +150,7 @@ const JobListingForm = () => {
 
 
       </div>
-      {/* <div>
-        <label htmlFor="image">Choose a listing photo: </label>
-
-        <input type="file"
-          id="avatar" name="avatar"
-          accept="image/png, image/jpeg" />
-      </div> */}
+     
       <br></br>
       <hr></hr>
       <br></br>
@@ -166,6 +163,7 @@ const JobListingForm = () => {
 
 
 
+{/* This function handles a confirmation screen for user after Post Job  button clicked. */}
   const ModalConfirm = () => {
     return (
       <Modal show = { confirmshow } onHide= {confirmhandleClose}>
@@ -212,6 +210,8 @@ const JobListingForm = () => {
         <br></br>
         <div>
           <JobListingForm />
+
+          {/* Checks when to display popups based on user clicking buttons. */}
           {confirmshow ? <ModalConfirm /> : null}
         </div>
 
