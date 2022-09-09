@@ -3,6 +3,7 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 import Image from "next/image";
 import styles from '../../styles/Home.module.css'
 import maktub from '../../public/maktub.png'
+import Link from "next/link";
 
 
 
@@ -16,10 +17,9 @@ const Footer = () => {
   target="_blank"
   rel="noopener noreferrer"
 >
-  Powered by{' '}
-  <span className={styles.logo}>
-    <Image src={maktub} alt="Maktub" width={75} height={75} />
-  </span>
+  Copyright 2022 © Made with ❤️ by Maktub Labs{' '}
+  {/* <span className={styles.logo}>
+  </span> */}
 </a>
 </footer>
         
