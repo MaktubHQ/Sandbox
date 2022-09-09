@@ -14,7 +14,6 @@ const Demo = () => {
 
     return ( 
         <div className={styles.container}>
-          {console.log(data.data)}
 
       <Navbars />
      <MasterClasses/>
