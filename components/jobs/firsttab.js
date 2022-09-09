@@ -200,6 +200,7 @@ const ApplyModal = () => {
 
 {/* This function handles a confirmation screen for user after apply button clicked. */}
 const ModalConfirm = () => {
+  applysetShow(false)
   return (
     <Modal show = { confirmshow } onHide= {confirmhandleClose}>
 
