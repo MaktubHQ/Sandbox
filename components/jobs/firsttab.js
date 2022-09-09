@@ -149,6 +149,7 @@ const ApplyModal = () => {
 <input type="hidden" id="ownerWallet" name="ownerWallet" value={applymodalInfo.wallet} />
 <input type="hidden" id="jobTitle" name="jobTitle" value={applymodalInfo.title} />
 <input type="hidden" id="email"  name="email" value={session && session.user.email}/>
+<input type="hidden" id="ownerEmail"  name="ownerEmail" value={applymodalInfo.email}/>
 
 <div className="contacts">
 
@@ -241,6 +242,7 @@ const handleSubmit = async (event) => {
   // Get data from the form.
   const data = {
     ownerWallet: event.target.ownerWallet.value,
+    ownerEmail: event.target.ownerEmail.value,
     jobTitle: event.target.jobTitle.value,
     email: event.target.email.value,
     discord: event.target.discord.value,
