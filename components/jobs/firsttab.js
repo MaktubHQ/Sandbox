@@ -148,13 +148,9 @@ const ApplyModal = () => {
     
 <input type="hidden" id="ownerWallet" name="ownerWallet" value={applymodalInfo.wallet} />
 <input type="hidden" id="jobTitle" name="jobTitle" value={applymodalInfo.title} />
+<input type="hidden" id="email"  name="email" value={session && session.user.email}/>
 
 <div className="contacts">
-<label htmlFor="email"> E-mail Address: </label>
-  <input id="email" type="email" name="email" />
-<br></br>
-
-<hr></hr>
 
 <label htmlFor="discord"> Discord ID: </label>
   <input id="discord" type="text" name="discord"  />
@@ -178,16 +174,6 @@ const ApplyModal = () => {
 
 </div>
 
-<hr></hr>
-
-<div>
-<label htmlFor="file">Upload Resume/CV: </label>
-
-<input type="file"
-   id="file" name="file"
-   accept="application/pdf" />
-</div>
-<br></br>
 <hr></hr>
 <br></br>
   

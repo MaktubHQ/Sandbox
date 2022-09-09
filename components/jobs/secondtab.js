@@ -87,6 +87,7 @@ const JobListingForm = () => {
     >
 
       <input type="hidden" id="wallet" name="wallet" value={publicKey && publicKey.toString()} />
+      <input type="hidden" id="email"  name="email" value={session && session.user.email}/>
 
       <label htmlFor="project"> Organization: </label>
         <input id="project" type="text" name="project" />
@@ -121,9 +122,7 @@ const JobListingForm = () => {
       <hr></hr>
 
       <div className="contacts">
-        <label htmlFor="email"> E-mail Address: </label>
-        <input id="email" type="email" name="email" />
-
+        
         <label htmlFor="discord"> Discord ID: </label>
         <input id="discord" type="text" name="discord" />
 
