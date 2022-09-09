@@ -79,6 +79,7 @@ const JobListingForm = () => {
     
   
   }
+  {/* This function returns a form for user to fill out about a job. */}
   return (
     <form
       name="job-listing-form"
