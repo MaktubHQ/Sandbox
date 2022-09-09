@@ -123,7 +123,8 @@ const ModalContent = () => {
 const ApplyModal = () => {
   const { data: session } = useSession()
   if(!session) {
-    setShow(false)
+    handleClose()
+    applyhandleClose()
 
   return( 
     <Modal show = { applyshow } onHide= {applyhandleClose}>
@@ -200,7 +201,7 @@ const ApplyModal = () => {
 
 {/* This function handles a confirmation screen for user after apply button clicked. */}
 const ModalConfirm = () => {
-  applysetShow(false)
+  applyhandleClose()
   return (
     <Modal show = { confirmshow } onHide= {confirmhandleClose}>
 
@@ -217,7 +218,7 @@ const ModalConfirm = () => {
 
         <Modal.Footer> 
 
-          <Button onClick={confirmhandleShow} variant="secondary">Close</Button>
+          <Button onClick={confirmhandleClose} variant="secondary">Close</Button>
         </Modal.Footer>
 
 
