@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import ConnectWallet from "../components/landing/connectwallet";
-import Footer from '../components/landing/footer'
-import Navbars from '../components/landing/navbar'
-import FirstTab from "../components/profile/firsttab";
-import SecondTab from "../components/profile/secondtab";
+import ConnectWallet from "../components/accessories/connectwallet";
+import Footer from '../components/accessories/footer'
+import Navbars from '../components/accessories/navbar'
 import styles from '../styles/Home.module.css'
 import { useSession } from "next-auth/react";
 import { useWallet } from "@solana/wallet-adapter-react";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import FirstTab from '../dejobs/firsttab';
+import FirstTab from '../jobs/firsttab';
 import { useWallet } from '@solana/wallet-adapter-react';
 import {
   WalletModalProvider,

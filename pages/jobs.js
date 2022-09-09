@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Footer from '../components/landing/footer'
-import FirstTab from "../components/dejobs/firsttab";
-import SecondTab from "../components/dejobs/secondtab";
+import Footer from '../components/accessories/footer'
+import FirstTab from "../components/jobs/firsttab";
+import SecondTab from "../components/jobs/secondtab";
 import styles from '../styles/Home.module.css'
-import Navbars from "../components/landing/navbar";
+import Navbars from "../components/accessories/navbar";
 
 
 const DeJobs = () => {

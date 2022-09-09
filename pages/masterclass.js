@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Footer from '../components/landing/footer'
-import Navbars from '../components/landing/navbar'
-import FirstTab from "../components/demo/firsttab";
-import SecondTab from "../components/demo/secondtab";
+import Footer from '../components/accessories/footer'
+import Navbars from '../components/accessories/navbar'
 import styles from '../styles/Home.module.css'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';

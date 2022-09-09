@@ -33,7 +33,7 @@ const Hero = () => (
           </h1> 
           <p className="herotextred">Break into web3. Or teach your own course.</p>
           <br></br>
-          <Link href="/education" style={{ textDecoration: 'none'}} className="button">Learn</Link>
+          <Link href="/masterclass" style={{ textDecoration: 'none'}} className="button">Learn</Link>
           </div>
           
             
@@ -49,7 +49,7 @@ const Hero = () => (
           <p className="herotextred">Find or post working opportunities</p>
           <br></br>
           
-          <Link href="/dejobs" style={{ textDecoration: 'none'}} className="button">Earn</Link>
+          <Link href="/jobs" style={{ textDecoration: 'none'}} className="button">Earn</Link>
           </div>
           <div className='float-child-image'>
           <Image src='/jobs.png' alt="Post a Job" className="images" width='800px' height='500px'/>

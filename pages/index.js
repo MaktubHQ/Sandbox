@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Footer from '../components/landing/footer'
-import Hero from '../components/landing/hero'
-import Navbars from '../components/landing/navbar'
+import Footer from '../components/accessories/footer'
+import Hero from '../components/accessories/hero'
+import Navbars from '../components/accessories/navbar'
 import styles from '../styles/Home.module.css'
 
 import "bootstrap/dist/css/bootstrap.min.css";
