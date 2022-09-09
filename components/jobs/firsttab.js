@@ -124,7 +124,6 @@ const ApplyModal = () => {
   const { data: session } = useSession()
   if(!session) {
     handleClose()
-    applyhandleClose()
 
   return( 
     <Modal show = { applyshow } onHide= {applyhandleClose}>
