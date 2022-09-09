@@ -232,6 +232,7 @@ const ModalConfirm = () => {
 const handleSubmit = async (event) => {
   // Stop the form from submitting and refreshing the page.
   event.preventDefault()
+  console.log("here")
 
   handleClose()
   applyhandleClose()
@@ -245,7 +246,6 @@ const handleSubmit = async (event) => {
     discord: event.target.discord.value,
     twitter: event.target.twitter.value,
     intro: event.target.intro.value,
-    file: event.target.file.value,
 
   }
 
