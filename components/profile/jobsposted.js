@@ -8,7 +8,7 @@ function JobsPosted (){
 
     const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-    const { data, error } = useSWR('/api/profile', fetcher)
+    const { data, error } = useSWR('/api/posts', fetcher)
 
     const jobsPosted = ""
 
