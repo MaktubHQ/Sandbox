@@ -57,7 +57,7 @@ const Login = () => {
   if (session) {
     return (
       <>
-        Welcome {session.user.email} !<br />
+        Welcome {session.user.email}!<br />
         <button className="redbutton" onClick={() => signOut()}>Sign out</button>
       </>
     )
