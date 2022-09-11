@@ -118,7 +118,8 @@ console.log(data)
 <h3>Applications Sent!</h3>
 <Row xs={1} md={2} className="g-4">
       {Array.from({ length: userData.length }).map((_, idx) => (
-        <Col key={userData._id}>
+        // eslint-disable-next-line react/jsx-key
+        <Col>
           <Card>
            
             <Card.Body>
@@ -138,7 +139,8 @@ console.log(data)
 <h3>Applications Received!</h3>
 <Row xs={1} md={2} className="g-4">
       {Array.from({ length: appsReceived.length }).map((_, idx) => (
-        <Col key={appsReceived._id}>
+        // eslint-disable-next-line react/jsx-key
+        <Col>
           <Card>
            
             <Card.Body>
