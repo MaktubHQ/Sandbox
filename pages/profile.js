@@ -6,6 +6,10 @@ import styles from '../styles/Home.module.css'
 import { useSession } from "next-auth/react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import useSWR from "swr";
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import JobsPosted from "../components/profile/jobsposted";
 
 
 const handleSubmit = async (event) => {
@@ -62,6 +66,7 @@ const Profile = () => {
 
   const { data, error } = useSWR('/api/profile', fetcher)
   const userData = ""
+  const appsReceived = ""
   
   const filterProfile = () => {
 
@@ -70,6 +75,20 @@ const Profile = () => {
       if(session){
         if(data.data[i].email == session.user.email){
            userData = (data.data[i])
+        }
+      }
+          
+         }
+  
+  }
+
+  const filterAppsReceived = () => {
+
+    for(let i=0; i < data.data.length; ++i){
+      console.log(data.data[i])
+      if(session){
+        if(data.data[i].ownerEmail == session.user.email){
+          appsReceived = (data.data[i])
         }
       }
           
@@ -85,13 +104,63 @@ console.log(data)
   return (
     <div className={styles.container}>
       {filterProfile()}
+      {filterAppsReceived()}
 
       <Navbars />
 
+      <h3>Welcome {session ? session.user.email : ""}!</h3>
+          <br></br>
+
+
+          <hr></hr>
+
+<div className="appsSent">
+<h3>Applications Sent!</h3>
+<Row xs={1} md={2} className="g-4">
+      {Array.from({ length: userData.length }).map((_, idx) => (
+        <Col key={userData._id}>
+          <Card>
+           
+            <Card.Body>
+              <Card.Title>{userData.jobTitle}</Card.Title>
+              <Card.Text>
+              Employer Email: {userData.ownerEmail ? userData.ownerEmail : "--"}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+</div>
+<hr></hr>
+
+<div className="appsReceived">
+<h3>Applications Received!</h3>
+<Row xs={1} md={2} className="g-4">
+      {Array.from({ length: appsReceived.length }).map((_, idx) => (
+        <Col key={appsReceived._id}>
+          <Card>
+           
+            <Card.Body>
+              <Card.Title>{appsReceived.jobTitle}</Card.Title>
+              <Card.Text>
+              Applicant Email: {appsReceived.email ? appsReceived.email : "--"}
+              <br></br>
+              Introduction: {appsReceived.intro ? appsReceived.intro : "--"}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+</div>
+<hr></hr>
+
+<JobsPosted/>
+
       <div className="profilePage">
         <div className="username">
-          <h3>Welcome {session ? session.user.email : ""}!</h3>
-          <br></br>
+          
           <form
             name="editprofile"
             onSubmit={handleSubmit}
@@ -176,12 +245,11 @@ console.log(data)
           </div>
 
         </div>
-
-
-
-
-
       </div>
+
+
+
+
       <Footer />
 
 
