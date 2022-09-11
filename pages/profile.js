@@ -65,8 +65,8 @@ const Profile = () => {
   const { connect, publicKey } = useWallet()
 
   const { data, error } = useSWR('/api/profile', fetcher)
-  const userData = ""
-  const appsReceived = ""
+  const userData = null
+  const appsReceived = null
   
   const filterProfile = () => {
 
@@ -74,7 +74,7 @@ const Profile = () => {
       console.log(data.data[i])
       if(session){
         if(data.data[i].email == session.user.email){
-           userData = (data.data[i])
+           userData.append(data.data[i])
         }
       }
           
@@ -88,7 +88,7 @@ const Profile = () => {
       console.log(data.data[i])
       if(session){
         if(data.data[i].ownerEmail == session.user.email){
-          appsReceived = (data.data[i])
+          appsReceived.append(data.data[i])
         }
       }
           
