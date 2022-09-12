@@ -20,7 +20,7 @@ function JobsPosted (){
         for(let i=0; i < data.data.length; ++i){
           console.log(data.data[i])
           if(session){
-            if(data.data[i].ownerEmail == session.user.email){
+            if(data.data[i].email == session.user.email){
               jobsPosted.push(data.data[i])
             }
           }
