@@ -80,6 +80,7 @@ const Profile = () => {
           }
               
              }
+             console.log(appsSent)
     }
   
 
@@ -94,6 +95,7 @@ const Profile = () => {
     }
         
         }
+        console.log(appsReceived)
   
   }
 
@@ -122,9 +124,10 @@ console.log(data)
       
 
       <Navbars />
+      <br></br>
 
       <h3>Welcome {session ? session.user.email : ""}!</h3>
-          <br></br>
+          
 
 
           <hr></hr>
