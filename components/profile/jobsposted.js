@@ -1,6 +1,8 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import useSWR from 'swr';
+import { useSession } from 'next-auth/react';
 
 
 function JobsPosted (){
@@ -9,6 +11,7 @@ function JobsPosted (){
     const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
     const { data, error } = useSWR('/api/posts', fetcher)
+    const { data: session } = useSession()
 
     const jobsPosted = []
 
