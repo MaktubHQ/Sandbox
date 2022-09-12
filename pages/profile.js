@@ -65,36 +65,49 @@ const Profile = () => {
   const { connect, publicKey } = useWallet()
 
   const { data, error } = useSWR('/api/profile', fetcher)
-  const userData = []
+  const appsSent = []
   const appsReceived = []
   
-  const filterProfile = () => {
 
-    for(let i=0; i < data.data.length; ++i){
-      console.log(data.data[i])
+    const filterAppsSent = () =>  {
       
-        if(data.data[i].email == session.user.email){
-           userData.append(data.data[i])
-        }
-
-          
-         }
+        for(let i=0; i < data.data.length; ++i){
+          console.log(data.data[i])
+          if(session){
+            if(data.data[i].email == session.user.email){
+              appsSent.push(data.data[i])
+            }
+          }
+              
+             }
+    }
   
-  }
 
   const filterAppsReceived = () => {
 
     for(let i=0; i < data.data.length; ++i){
-      console.log(data.data[i])
-  
-        if(data.data[i].ownerEmail == session.user.email){
-          appsReceived.append(data.data[i])
+    console.log(data.data[i])
+    if(session){
+      if(data.data[i].ownerEmail == session.user.email){
+        appsReceived.push(data.data[i])
+      }
+    }
+        
         }
-    
-          
-         }
   
   }
+
+  const userData = ""
+
+    const userDataCollect = () => {
+
+      for(let i=0; i < data.data.length; ++i){
+          if(data.data[i].email == session.user.email){
+             userData = (data.data[i])
+          }
+      
+      }
+    }
   
 
 if (error) return <div>Failed to load</div>
@@ -103,8 +116,10 @@ console.log(data)
 
   return (
     <div className={styles.container}>
-      {filterProfile()}
+      {userDataCollect()}
+      {filterAppsSent()}
       {filterAppsReceived()}
+      
 
       <Navbars />
 
@@ -117,15 +132,15 @@ console.log(data)
 <div className="appsSent">
 <h3>Applications Sent!</h3>
 <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: userData.length }).map((_, idx) => (
+      {Array.from({ length: appsSent.length }).map((_, idx) => (
         // eslint-disable-next-line react/jsx-key
         <Col>
           <Card>
            
             <Card.Body>
-              <Card.Title>{userData[idx].jobTitle}</Card.Title>
+              <Card.Title>{appsSent[idx].jobTitle}</Card.Title>
               <Card.Text>
-              Employer Email: {userData[idx].ownerEmail ? userData[idx].ownerEmail : "--"}
+              Employer Email: {appsSent[idx].ownerEmail ? appsSent[idx].ownerEmail : "--"}
               </Card.Text>
             </Card.Body>
           </Card>
