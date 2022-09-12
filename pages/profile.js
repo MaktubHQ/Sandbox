@@ -134,7 +134,7 @@ console.log(data)
 
 <div className="appsSent">
 <h3>Applications Sent!</h3>
-<Row xs={1} md={2} className="g-4">
+<Row xs={1} md={4} className="g-4">
       {Array.from({ length: appsSent.length }).map((_, idx) => (
         // eslint-disable-next-line react/jsx-key
         <Col>
@@ -155,7 +155,7 @@ console.log(data)
 
 <div className="appsReceived">
 <h3>Applications Received!</h3>
-<Row xs={1} md={2} className="g-4">
+<Row xs={1} md={4} className="g-4">
       {Array.from({ length: appsReceived.length }).map((_, idx) => (
         // eslint-disable-next-line react/jsx-key
         <Col>

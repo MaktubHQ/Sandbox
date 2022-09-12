@@ -38,7 +38,7 @@ if (!data) return <div>Magic is loading...</div>
         <div className="jobsPosted">
             {filterJobsPosted()}
 <h3>Jobs Posted!</h3>
-<Row xs={1} md={2} className="g-4">
+<Row xs={1} md={4} className="g-4">
       {Array.from({ length: jobsPosted.length }).map((_, idx) => (
         // eslint-disable-next-line react/jsx-key
         <Col>
