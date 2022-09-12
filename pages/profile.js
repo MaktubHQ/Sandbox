@@ -64,7 +64,7 @@ const Profile = () => {
   const { data: session } = useSession()
   const { connect, publicKey } = useWallet()
 
-  const { data, error } = useSWR('/api/profile', fetcher)
+  const { data, error } = useSWR('/api/profileapplications', fetcher)
   const appsSent = []
   const appsReceived = []
   
