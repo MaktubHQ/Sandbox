@@ -10,7 +10,7 @@ function JobsPosted (){
 
     const { data, error } = useSWR('/api/posts', fetcher)
 
-    const jobsPosted = ""
+    const jobsPosted = []
 
     const filterJobsPosted = () => {
 
@@ -18,7 +18,7 @@ function JobsPosted (){
           console.log(data.data[i])
           if(session){
             if(data.data[i].ownerEmail == session.user.email){
-              jobsPosted = (data.data[i])
+              jobsPosted.push(data.data[i])
             }
           }
               
@@ -37,7 +37,8 @@ if (!data) return <div>Magic is loading...</div>
 <h3>Jobs Posted!</h3>
 <Row xs={1} md={2} className="g-4">
       {Array.from({ length: jobsPosted.length }).map((_, idx) => (
-        <Col key={jobsPosted._id}>
+        // eslint-disable-next-line react/jsx-key
+        <Col>
           <Card>
   
             <Card.Body>
@@ -52,7 +53,10 @@ if (!data) return <div>Magic is loading...</div>
         </Col>
       ))}
     </Row>
+    <hr></hr>
+<br></br>
 </div>
+
     )
 }
 

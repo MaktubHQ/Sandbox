@@ -176,7 +176,7 @@ console.log(data)
 </div>
 <hr></hr>
 
-{/* <JobsPosted/> */}
+<JobsPosted/>
 
       <div className="profilePage">
         <div className="username">
