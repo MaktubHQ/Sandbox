@@ -123,9 +123,9 @@ console.log(data)
           <Card>
            
             <Card.Body>
-              <Card.Title>{userData.jobTitle}</Card.Title>
+              <Card.Title>{userData[idx].jobTitle}</Card.Title>
               <Card.Text>
-              Employer Email: {userData.ownerEmail ? userData.ownerEmail : "--"}
+              Employer Email: {userData[idx].ownerEmail ? userData[idx].ownerEmail : "--"}
               </Card.Text>
             </Card.Body>
           </Card>
@@ -144,11 +144,11 @@ console.log(data)
           <Card>
            
             <Card.Body>
-              <Card.Title>{appsReceived.jobTitle}</Card.Title>
+              <Card.Title>{appsReceived[idx].jobTitle}</Card.Title>
               <Card.Text>
-              Applicant Email: {appsReceived.email ? appsReceived.email : "--"}
+              Applicant Email: {appsReceived[idx].email ? appsReceived[idx].email : "--"}
               <br></br>
-              Introduction: {appsReceived.intro ? appsReceived.intro : "--"}
+              Introduction: {appsReceived[idx].intro ? appsReceived[idx].intro : "--"}
               </Card.Text>
             </Card.Body>
           </Card>
