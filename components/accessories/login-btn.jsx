@@ -1,5 +1,6 @@
 import React from "react"
 import { useSession, signIn, signOut } from "next-auth/react"
+import Image from "next/image"
 
 
 // Working on this function to store user info in DB on initial sign-in//
@@ -56,10 +57,17 @@ const Login = () => {
   const { data: session } = useSession()
   if (session) {
     return (
-      <>
-        Welcome {session.user.email}!<br />
-        <button className="redbutton" onClick={() => signOut()}>Sign out</button>
-      </>
+      <div className="navAvatar">
+        <div>
+          <p>Welcome {session.user.email}!</p> <br />
+        <Image src={session.user.image} alt="Logo" className="logo" width='75px' height='75px'/>
+        </div>
+       
+      <div>
+      <button className="redbutton" onClick={() => signOut()}>Sign out</button>
+      </div>
+      
+      </div>
     )
   }
   else{
