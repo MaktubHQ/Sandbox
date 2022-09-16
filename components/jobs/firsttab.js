@@ -294,47 +294,49 @@ const router = useRouter()
 if (error) return <div>Failed to load</div>
 if (!data) return <div>Magic is loading...</div>
 
-
+const dataReversed = data.data.reverse()
 
 
   return (
       <div className='container'>
         {console.log(data)}
 
+        
+
 
         {/* This card concept was created by React Bootstrap. We dynamically set the data shown using our DB. */}
 
         <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: data.data.length }).map((_, idx) => (
+      {Array.from({ length: dataReversed.length }).map((_, idx) => (
         
         <Col>
-          <Card className='cards' onClick={event => {rowEvents(data.data[idx])}}>
+          <Card className='cards' onClick={event => {rowEvents(dataReversed[idx])}}>
             {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
             <Card.Body>
-              <Card.Title className='cardtitle' numberOfLines={1} style={{fontSize:15, textAlign:"center"}}>{data.data[idx].title.substring(0, 75)}</Card.Title>
-              <Card.Subtitle className='cardtitle' numberOfLines={1} style={{fontSize:12, textAlign:"center"}}>{" " + (data.data[idx].project ? data.data[idx].project : "----")}</Card.Subtitle>
+              <Card.Title className='cardtitle' numberOfLines={1} style={{fontSize:15, textAlign:"center"}}>{dataReversed[idx].title.substring(0, 75)}</Card.Title>
+              <Card.Subtitle className='cardtitle' numberOfLines={1} style={{fontSize:12, textAlign:"center"}}>{" " + (dataReversed[idx].project ? dataReversed[idx].project : "----")}</Card.Subtitle>
               <Card.Text>
               
              
               <br></br>
               <div className='JobBox'>
               <div className='JobBox'>
-              <span className='oneliner'><Image src="/role.svg" height={20} width={20}/></span> {(data.data[idx].role ? data.data[idx].role : "----")}
+              <span className='oneliner'><Image src="/role.svg" height={20} width={20}/></span> {(dataReversed[idx].role ? dataReversed[idx].role : "----")}
               <br></br>
               </div>
              <div className='JobBox'>
-             <span className='oneliner'><Image src="/budget.svg" height={20} width={20}/> </span> {(data.data[idx].budget ? data.data[idx].budget : "----") }
+             <span className='oneliner'><Image src="/budget.svg" height={20} width={20}/> </span> {(dataReversed[idx].budget ? dataReversed[idx].budget : "----") }
               <br></br>
              </div>
               <div className='JobBox'>
-              <span className='oneliner'><Image src="/discord.svg" height={20} width={20}/></span> {(data.data[idx].discord ? data.data[idx].discord : "----")}
+              <span className='oneliner'><Image src="/discord.svg" height={20} width={20}/></span> {(dataReversed[idx].discord ? dataReversed[idx].discord : "----")}
               <br></br>
 
               </div>
               <div className='JobBox'>
               
-                <a href={"https://twitter.com/" + data.data[idx].twitter} style={{fontSize: 15}}> 
-              <span className='oneliner'><Image src="/twitter.svg" height={20} width={20}/></span> {(data.data[idx].twitter ? data.data[idx].twitter : "----")}
+                <a href={"https://twitter.com/" + dataReversed[idx].twitter} style={{fontSize: 15}}> 
+              <span className='oneliner'><Image src="/twitter.svg" height={20} width={20}/></span> {(dataReversed[idx].twitter ? dataReversed[idx].twitter : "----")}
               </a>
               </div>
 
