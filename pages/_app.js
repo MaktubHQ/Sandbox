@@ -32,6 +32,11 @@ import { SessionProvider } from "next-auth/react"
 
 // Default styles that can be overridden by your app
 require('@solana/wallet-adapter-react-ui/styles.css');
+import TagManager from "react-gtm-module"
+
+const tagManagerArgs = {
+  id: "G-1S1884ECER",
+}
 
 
 
@@ -40,6 +45,9 @@ export default function App({
     Component,
     pageProps, session,
   })  {
+    useEffect(() => {
+        TagManager.initialize(tagManagerArgs)
+      }, [])
   
 
 
