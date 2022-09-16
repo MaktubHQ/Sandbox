@@ -843,6 +843,6 @@ nav a:active{
   text-align: center;
 }
 
-.navAvatar{
-  
+.avatar{
+  border-radius: 50%;
 }
