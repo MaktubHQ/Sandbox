@@ -60,7 +60,7 @@ const Login = () => {
       <div className="navAvatar">
         <div>
           <p>Welcome {session.user.email}!</p> <br />
-        <Image src={session.user.image} alt="Logo" className="logo" width='75px' height='75px'/>
+        <Image src={session.user.image.toString()} alt="Logo" className="logo" width='75px' height='75px'/>
         </div>
        
       <div>
