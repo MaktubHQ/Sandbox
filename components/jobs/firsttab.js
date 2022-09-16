@@ -26,6 +26,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 function FirstTab({walletAddress}) {
 
   const { data, error } = useSWR('/api/posts', fetcher)
+  const dataReversed = data.data.reverse()
   const { connect, publicKey } = useWallet()
 
   const [modalInfo, setModalInfo] = useState([]);
@@ -294,7 +295,7 @@ const router = useRouter()
 if (error) return <div>Failed to load</div>
 if (!data) return <div>Magic is loading...</div>
 
-const dataReversed = data.data.reverse()
+
 
 
   return (
