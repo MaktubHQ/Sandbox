@@ -59,7 +59,7 @@ const Login = () => {
     return (
       <div className="navAvatar">
         <div>
-          <p>Welcome {session.user.email}!</p> <br />
+          <p>Welcome {session.user.email}!</p>
         <Image src={session.user.image} alt="Logo" className="avatar" width='50px' height='50px'/>
         </div>
        
