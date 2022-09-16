@@ -7,6 +7,7 @@ import '../styles/font.css'
 import "@fontsource/open-sans";
 import "@fontsource/open-sans/500.css"; // Weight 500.
 //import "@fontsource/open-sans/900-italic.css";
+import { useEffect } from "react";
 
 
 import React, { FC, useMemo } from 'react';
