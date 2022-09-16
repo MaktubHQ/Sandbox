@@ -5,10 +5,11 @@ import Image from "next/image"
 
 // Working on this function to store user info in DB on initial sign-in//
 
-const handler = async (session) => {
+const handler = async () => {
   // Stop the form from submitting and refreshing the page.
 
-  
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const { data: session } = useSession()
 console.log(session.user.email)
 
   // Get data from the form.
@@ -45,10 +46,9 @@ console.log(session.user.email)
   console.log(data)
 }
 
-const test = (session) =>{
+const test = () =>{
   signIn()
-handler(session)
-  
+  handler()
 }
 
 const Login = () => {
@@ -74,7 +74,7 @@ const Login = () => {
     return (
       <>
         <br />
-        <button className="button" onClick={() => test(session)}>Sign in</button>
+        <button className="button" onClick={() => test()}>Sign in</button>
       </>
     )
   }
