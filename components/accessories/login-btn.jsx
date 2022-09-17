@@ -21,7 +21,7 @@ console.log(session.user.email)
   const JSONdata = JSON.stringify(data)
 
   // API endpoint where we send form data.
-  const endpoint = '/../../../pages/api/profile'
+  const endpoint = '/api/profile'
 
   // Form the request for sending data to the server.
   const options = {
