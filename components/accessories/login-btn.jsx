@@ -47,8 +47,9 @@ console.log(session.user.email)
 }
 
 const test = () =>{
-  signIn()
-  handler()
+  signIn().then(() => {
+    handler
+    })
 }
 
 const Login = () => {
