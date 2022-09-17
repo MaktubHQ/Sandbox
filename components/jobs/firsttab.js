@@ -26,7 +26,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 function FirstTab({walletAddress}) {
 
   const { data, error } = useSWR('/api/posts', fetcher)
-  const dataReversed = data.data.reverse()
+  
   const { connect, publicKey } = useWallet()
 
   const [modalInfo, setModalInfo] = useState([]);
@@ -296,13 +296,19 @@ if (error) return <div>Failed to load</div>
 if (!data) return <div>Magic is loading...</div>
 
 
+const dataReversed = []
 
+function reverseArr(input) {
+  for(var i = input.length-1; i >= 0; i--) {
+      dataReversed.push(input[i]);
+  }
+}
 
   return (
       <div className='container'>
         {console.log(data)}
 
-        
+        {reverseArr(data.data)}
 
 
         {/* This card concept was created by React Bootstrap. We dynamically set the data shown using our DB. */}
