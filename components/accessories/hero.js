@@ -10,12 +10,12 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">3Lance</span>
+            <span className="herotitle">Rails</span>
           </h1>
           <p className="herotext">
-          Decentralized P2P Career Hub for educators, engineers, creators, and organizations.
+          for people to succeed in the most decentralized global community - web3. Come learn, teach, employ, fundraise...
           </p>
-          <p className="herotextred">Educate, Freelance, Finance</p>
+          <p className="herotextred">Do you believe in destiny?</p>
           <Login/>
                 </div>
           <div className='float-child-image'>
