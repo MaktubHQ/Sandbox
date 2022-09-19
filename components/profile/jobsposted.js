@@ -45,11 +45,11 @@ if (!data) return <div>Magic is loading...</div>
           <Card>
   
             <Card.Body>
-              <Card.Title>{jobsPosted.title}</Card.Title>
+              <Card.Title>{jobsPosted[idx].title}</Card.Title>
               <Card.Text>
-              Budget: {jobsPosted.budget ? jobsPosted.budget : "--"}
+              Budget: {jobsPosted[idx].budget ? jobsPosted[idx].budget : "--"}
               <br></br>
-              Description: {jobsPosted.jobdescription ? jobsPosted.jobdescription : "--"}
+              Description: {jobsPosted[idx].jobdescription ? jobsPosted[idx].jobdescription : "--"}
               </Card.Text>
             </Card.Body>
           </Card>

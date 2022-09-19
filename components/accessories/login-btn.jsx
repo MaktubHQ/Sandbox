@@ -7,9 +7,8 @@ import Image from "next/image"
 
 const handler = async () => {
   // Stop the form from submitting and refreshing the page.
-
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const { data: session } = useSession()
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { data: session } = useSession()
 console.log(session.user.email)
 
   // Get data from the form.
@@ -48,7 +47,7 @@ console.log(session.user.email)
 
 const test = () =>{
   signIn().then(() => {
-    handler
+    handler()
     })
 }
 
