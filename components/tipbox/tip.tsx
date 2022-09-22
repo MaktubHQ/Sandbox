@@ -69,7 +69,7 @@ const TipAuthor: FC = () => {
 
 
         <h5>Or send to </h5>
-        <h6>23vooRoaSfXqU27S3ucdtZ6WfcPA1w4WdtkaeVRHTghH</h6>
+        <h6>2hBWBzunMehc5nWKeY17sMqRLGosKaoNHfsBXtrdmJmt</h6>
     </div>
         
 </div>
