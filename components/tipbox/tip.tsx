@@ -25,7 +25,7 @@ const TipAuthor: FC = () => {
             SystemProgram.transfer({
                 fromPubkey: publicKey,
                 //to AuthorWallet
-                toPubkey: new PublicKey("Dz3spy7Me5Et3vZMTq7x29fVxGbLts6PdKirLEabeMm1"),
+                toPubkey: new PublicKey("2hBWBzunMehc5nWKeY17sMqRLGosKaoNHfsBXtrdmJmt"),
                 lamports: lamports,
             })
         );
