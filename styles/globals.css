@@ -846,3 +846,17 @@ nav a:active{
 .avatar{
   border-radius: 50%;
 }
+.button-tip{
+  color: black;
+  background: -webkit-linear-gradient(#69E2FF, #1387D2);
+  padding: 15px;
+  margin: 0 auto;
+  border-radius: 25px;
+  font-weight: 900;
+}
+
+.TipMaktub{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}

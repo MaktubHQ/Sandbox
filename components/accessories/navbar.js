@@ -73,7 +73,8 @@ const Navbars = () => {
           <Nav className="me-auto" >
             <Nav.Link href="/masterclass" className="links">Masterclass</Nav.Link>
             <Nav.Link href="/jobs" className="links">Jobs</Nav.Link>
-            <Nav.Link href="/profile" className="links">Profile</Nav.Link> 
+            <Nav.Link href="/profile" className="links">Profile</Nav.Link>
+            <Nav.Link href="/tipbox" className="links">Tipbox</Nav.Link> 
           </Nav>
 
           <Nav.Item >
