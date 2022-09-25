@@ -17,6 +17,7 @@ const Hero = () => (
           </p>
           <p className="herotextred">Do you believe in destiny?</p>
           <Login/>
+          <br></br>
                 </div>
           <div className='float-child-image'>
           <Image src="/banner.png" alt="Contract" width='500px' height='500px'/>
@@ -24,6 +25,7 @@ const Hero = () => (
         </div>
 
 {/* Section 2 of Hero highlights Masterclass. */}
+<br></br>
         <hr></hr>
         <div className="heroinformation">
               <div className='float-child-image'>
