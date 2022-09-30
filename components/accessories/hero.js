@@ -13,7 +13,7 @@ const Hero = () => (
             <span className="herotitle">Rails</span>
           </h1>
           <p className="herotext">
-          for people to succeed in the most decentralized global community - web3. Come learn, teach, employ, fundraise...
+          for people to succeed in the most decentralized global community - web3. Come learn, teach, build, employ, fundraise...
           </p>
           <p className="herotextred">Do you believe in destiny?</p>
           <Login/>
