@@ -10,7 +10,7 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">Rails</span>
+            <span className="herotitle">Sandbox</span>
           </h1>
           <p className="herotext">
           for people to succeed in the most decentralized global community - web3. Come learn, teach, build, employ, fundraise...
