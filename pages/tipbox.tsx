@@ -13,7 +13,12 @@ const TipBox = () => {
         <div className={styles.container}>
 
       <Navbars />
+      <br></br>
+        <h5>Drop a tip for Maktub Labs to support continued development :)</h5>
+        <br></br>
       <TipAuthor/>
+      <h5>Or send to </h5>
+        <h6>2hBWBzunMehc5nWKeY17sMqRLGosKaoNHfsBXtrdmJmt</h6>
       <Footer />
 
       
