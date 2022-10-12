@@ -275,7 +275,7 @@ border: 3px solid transparent;
 }
 .herotextred{
   color: white;
-  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  background: -webkit-linear-gradient(left,#deaf74, #fec746);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
@@ -316,7 +316,7 @@ svg {
 
  .button{
   color: black;
-  background: -webkit-linear-gradient(#69E2FF, #1387D2);
+  background: -webkit-linear-gradient(#deaf74, #fec746);
   padding: 15px;
   width: 80%;
   margin: 0 auto;
@@ -325,7 +325,7 @@ svg {
 }
 .redbutton{
   color: black;
-  background: -webkit-linear-gradient(#ff8867, #ff52ff);
+  background: -webkit-linear-gradient(#deaf74, #b3533d);
   padding: 15px;
   width: 80%;
   margin: 0 auto;
@@ -334,14 +334,14 @@ svg {
 }
 
 .button a:hover{
-  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  background: -webkit-linear-gradient(left,#deaf74, #b3533d);
   color: white;
 }
 
 .hero a{
   color: white;
   text-align: center;
-  background: -webkit-linear-gradient(left, #00FFA3, #03E1FF);
+  background: -webkit-linear-gradient(left, #deaf74, #fec746);
   padding: 15px;
   width: 80%;
   margin: 0 auto;
@@ -370,7 +370,7 @@ svg {
 }
 
 .gradient-text {
-  background: -webkit-linear-gradient(left, #ff8867, #ff52ff);
+  background: -webkit-linear-gradient(left, #deaf74, #b3533d);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -389,7 +389,7 @@ svg {
   color: white;
 }
 .cta-button a:hover{
-  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  background: -webkit-linear-gradient(left,#deaf74, #b3533d);
   color: black;
 }
 
@@ -441,11 +441,11 @@ ul.nav li:nth-child(2) {
   border-top-right-radius: 2rem;
 }
 ul.nav li:hover {
-  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  background: -webkit-linear-gradient(left,#deaf74, #b3533d);
   color: black;
 }
 ul.nav li.active {
-  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  background: -webkit-linear-gradient(left,#deaf74, #b3533d);
   color: black;
 }
 
@@ -483,19 +483,19 @@ li.passive {
 }
 
 a:hover{
-  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  background: -webkit-linear-gradient(left,#deaf74, #b3533d);
   color: white;
   
 }
 nav a:hover{
-  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  background: -webkit-linear-gradient(left,#deaf74, #b3533d);
   color: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
 }
 nav a:active{
-  background: -webkit-linear-gradient(left,#69E2FF, #1387D2);
+  background: -webkit-linear-gradient(left,#deaf74, #b3533d);
   color: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
