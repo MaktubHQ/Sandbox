@@ -8,11 +8,11 @@ import useSWR from 'swr'
 
 
 
-const fetcher = (arg: any, ...args: any) => fetch(arg, ...args)
+//const fetcher = (arg: any, ...args: any) => fetch(arg, ...args)
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 
-
-const TipAuthor: FC = () => {
+const TipAuthor = () => {
     const { connection } = useConnection();
     const { publicKey, sendTransaction } = useWallet();
     const { data, error } = useSWR('/api/fundraise', fetcher)
@@ -47,7 +47,7 @@ const TipAuthor: FC = () => {
         await connection.confirmTransaction({ blockhash, lastValidBlockHeight, signature });
     }, [publicKey, lamports, connection, sendTransaction]);
 
-    function setTheLamports(e: any) {
+    function setTheLamports(e) {
     console.log(Number(e.target.value));
     setLamports(Number(e.target.value));
     // lamports = e.target.value;
