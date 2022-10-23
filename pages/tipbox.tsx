@@ -14,7 +14,7 @@ const TipBox = () => {
 
       <Navbars />
       <br></br>
-        <h5>Drop a tip for Maktub Labs to support continued development :)</h5>
+        <h5>Buy our devs at Maktub Labs coffee :)</h5>
         <br></br>
       <TipAuthor/>
       <h5>Or send to </h5>
