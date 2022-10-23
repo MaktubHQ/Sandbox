@@ -87,7 +87,7 @@ const StartFundraise = () => {
 
     >
 
-      <input type="hidden" id="wallet" name="wallet" value={publicKey && publicKey.toString()} />
+      <input type="hidden" id="ownerWallet" name="ownerWallet" value={publicKey && publicKey.toString()} />
       <input type="hidden" id="email"  name="email" value={session && session.user.email}/>
 
       <div className="main">
