@@ -3,7 +3,7 @@ import Footer from '../components/accessories/footer'
 import Navbars from '../components/accessories/navbar'
 import styles from '../styles/Home.module.css'
 import useSWR from "swr";
-import FirstTab from "../components/fundraise/firsttab.tsx";
+import FirstTab from "../components/fundraise/firsttab";
 import SecondTab from "../components/fundraise/secondtab";
 
 
