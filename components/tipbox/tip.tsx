@@ -4,12 +4,19 @@ import { clusterApiUrl, Transaction, SystemProgram, Keypair, LAMPORTS_PER_SOL, P
 import React, { FC, useCallback } from 'react';
 import { useState } from 'react';
 import ConnectWallet from '../accessories/connectwallet';
+import useSWR from 'swr'
+
+
+
+const fetcher = (arg: any, ...args: any) => fetch(arg, ...args)
 
 
 
 const TipAuthor: FC = () => {
     const { connection } = useConnection();
     const { publicKey, sendTransaction } = useWallet();
+    const { data, error } = useSWR('/api/fundraise', fetcher)
+
     let [lamports, setLamports] = useState(.1);
     let thelamports = 0;
     let userInput;
@@ -25,7 +32,7 @@ const TipAuthor: FC = () => {
             SystemProgram.transfer({
                 fromPubkey: publicKey,
                 //to AuthorWallet
-                toPubkey: new PublicKey("2hBWBzunMehc5nWKeY17sMqRLGosKaoNHfsBXtrdmJmt"),
+                toPubkey: new PublicKey(data.data.ownerWallet),
                 lamports: lamports,
             })
         );
@@ -51,25 +58,18 @@ const TipAuthor: FC = () => {
 }
 
 
-  
+if (error) return <div>Failed to load</div>
+if (!data) return <div>Magic is loading...</div>
 
     return (
 <div>
 
     <div className='TipMaktub'>
-        <br></br>
-        <h5>Drop a tip for Maktub Labs to support continued development :)</h5>
-        <br></br>
-        <ConnectWallet></ConnectWallet>
-        <br></br>
-    <input value={lamports} type="number" onChange={(e) => setTheLamports(e)}></input>
+        <span><ConnectWallet></ConnectWallet><input value={lamports} type="number" onChange={(e) => setTheLamports(e)}></input>
         <button className="button-tip" onClick={onClick} disabled={!publicKey}>
             Tip SOL
-        </button>
-
-
-        <h5>Or send to </h5>
-        <h6>2hBWBzunMehc5nWKeY17sMqRLGosKaoNHfsBXtrdmJmt</h6>
+        </button></span>
+   
     </div>
         
 </div>
