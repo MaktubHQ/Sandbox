@@ -26,7 +26,6 @@ const StartFundraise = () => {
   const { data: session } = useSession()
 
 {/* This function checks if a user is signed in to access writing data to our DB with actions(Post Job or Apply to Job). */}
-  if (!session) return <div>Please sign in! <Login/></div>
   if (!publicKey) return <div>Please connect your wallet for donations to go into. <ConnectWallet/></div>
   
 
