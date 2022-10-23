@@ -93,19 +93,23 @@ const StartFundraise = () => {
       <div className="main">
         
         <label htmlFor="title"> Title: </label>
-        <input id="title" type="text" name="title" />
+        <input id="title" type="text" name="title" required/>
 
         <label htmlFor="goal"> Goal: </label>
-        <input id="goal" type="text" name="goal" />
+        <input id="goal" type="text" name="goal" required/>
 
         <label htmlFor="usecase"> Use Case: </label>
         <input id="usecase" type="text" name="usecase" />
-
-        <label htmlFor="pitch"> Pitch: </label>
-        <input id="pitch" type="text" name="pitch" />
         <br></br>
         <hr></hr>
 
+      </div>
+
+      <div className="pitch">
+      <label htmlFor="pitch"> Pitch: </label>
+        <textarea id="pitch" type="text" name="pitch" required></textarea>
+        <br></br>
+        <hr></hr>
       </div>
 
 
