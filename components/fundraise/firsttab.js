@@ -13,15 +13,15 @@ import TipAuthor from '../tipbox/tip';
 import useSWR, { Key, Fetcher } from 'swr'
 
 
-interface FundraiseCard {
-  title: string
-  goal: number
-  usecase: string
-  pitch: string
-  icon: string
-  ownerwallet: string
-  children: React.ReactNode|React.ReactNode[];
-}
+// interface FundraiseCard {
+//   title: string
+//   goal: number
+//   usecase: string
+//   pitch: string
+//   icon: string
+//   ownerwallet: string
+//   children: React.ReactNode|React.ReactNode[];
+// }
 
 
 function FirstTab() {

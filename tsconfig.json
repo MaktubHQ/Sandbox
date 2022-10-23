@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/fundraise/firsttab.tsx", "pages/fundraise.js"  ],
+, "components/fundraise/firsttab.js", "pages/fundraise.js"  ],
   "exclude": [
     "node_modules"
   ]
