@@ -4,24 +4,27 @@ import { clusterApiUrl, Transaction, SystemProgram, Keypair, LAMPORTS_PER_SOL, P
 import React, { FC, useCallback } from 'react';
 import { useState } from 'react';
 import ConnectWallet from '../accessories/connectwallet';
-import useSWR from 'swr'
+import useSWR, { Key, Fetcher } from 'swr'
+import axios from 'axios'
 
 
 
-//const fetcher = (arg: any, ...args: any) => fetch(arg, ...args)
-const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+const fetcher = url => axios.get(url).then(res => res.data)
+//const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 
-const TipAuthor = () => {
+const TipAuthor: FC = () => {
     const { connection } = useConnection();
     const { publicKey, sendTransaction } = useWallet();
     const { data, error } = useSWR('/api/fundraise', fetcher)
 
     let [lamports, setLamports] = useState(.1);
     let thelamports = 0;
-    let userInput;
+
 
     const onClick = useCallback(async () => {
+        {console.log(data)}
         if (!publicKey) throw new WalletNotConnectedError();
 
         // 890880 lamports as of 2022-09-01
@@ -32,7 +35,7 @@ const TipAuthor = () => {
             SystemProgram.transfer({
                 fromPubkey: publicKey,
                 //to AuthorWallet
-                toPubkey: new PublicKey(data.data.ownerWallet),
+                toPubkey: new PublicKey(data.data[0].ownerWallet),
                 lamports: lamports,
             })
         );
@@ -47,10 +50,10 @@ const TipAuthor = () => {
         await connection.confirmTransaction({ blockhash, lastValidBlockHeight, signature });
     }, [publicKey, lamports, connection, sendTransaction]);
 
-    function setTheLamports(e) {
+    function setTheLamports(e: any) {
     console.log(Number(e.target.value));
     setLamports(Number(e.target.value));
-    // lamports = e.target.value;
+    lamports = Number(e.target.value);
     // userInput = e.target.value;
     thelamports = lamports;
     console.log(thelamports)
@@ -62,6 +65,7 @@ if (error) return <div>Failed to load</div>
 if (!data) return <div>Magic is loading...</div>
 
     return (
+
 <div>
 
     <div className='TipMaktub'>
