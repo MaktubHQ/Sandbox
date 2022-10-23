@@ -39,14 +39,15 @@ const StartFundraise = () => {
     // Get data from the form.
     const data = {
       ownerWallet: event.target.ownerWallet.value,
-      goal: event.target.goal.value,
-      title: event.target.title.value,
       email: event.target.email.value,
+      title: event.target.title.value,
+      goal: event.target.goal.value,
+      usecase: event.target.usecase.value,
+      pitch: event.target.pitch.value,
       discord: event.target.discord.value,
       twitter: event.target.twitter.value,
       icon: event.target.icon.value,
-      usecase: event.target.usecase.value,
-      pitch: event.target.pitch.value
+      
     }
   
     // Send the data to the server in JSON format.
@@ -121,6 +122,9 @@ const StartFundraise = () => {
 
         <label htmlFor="twitter"> Twitter: </label>
         <input id="twitter" type="text" name="twitter" />
+
+        <label htmlFor="icon"> Icon: </label>
+        <input id="icon" type="text" name="icon" />
 
 
         <br></br>
