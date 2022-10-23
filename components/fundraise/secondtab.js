@@ -27,7 +27,7 @@ const StartFundraise = () => {
 
 {/* This function checks if a user is signed in to access writing data to our DB with actions(Post Job or Apply to Job). */}
   if (!session) return <div>Please sign in! <Login/></div>
-  if (!connect) return <div>Please connect donation wallet! <ConnectWallet/></div>
+  if (!publicKey) return <div>Please connect donation wallet! <ConnectWallet/></div>
   
 
   {/* This function handles submitting a job form details to our DB.*/}
