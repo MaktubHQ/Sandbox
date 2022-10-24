@@ -37,7 +37,7 @@ const MasterClasses = () => {
           <Card onClick={event => {openLink(data.data[idx].link)}}>
             <Card.Body>
               <Card.Img variant="top" src={`${idx}.png`}/>
-              <Card.Title>{data.data[idx].name}</Card.Title>
+              <Card.Title className="courseName">{data.data[idx].name}</Card.Title>
               {/* <Card.Text>
                 {data.data[idx].description}
               </Card.Text> */}
