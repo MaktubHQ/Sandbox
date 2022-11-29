@@ -29,13 +29,13 @@ const DeJobs = () => {
           className={activeTab === "tab1" ? "active" : "passive"}
           onClick={handleTab1}
         >
-          Job Listings
+          Idle Quests
         </li>
         <li
           className={activeTab === "tab2" ? "active" : "passive"}
           onClick={handleTab2}
         >
-          Post Job
+          Post a Quest
         </li>
       </ul>
  

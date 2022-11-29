@@ -13,9 +13,9 @@ const Hero = () => (
             <span className="herotitle">Sandbox</span>
           </h1>
           <p className="herotext">
-          for people to succeed in the most decentralized global community - web3. Come learn, teach, build, employ, fundraise...
+          A network for experimenters and early explorers to meet and share advice. 
           </p>
-          <p className="herotextred">Do you believe in destiny?</p>
+          <p className="herotextred">Mentor, sponsor, build</p>
           <Login/>
           <br></br>
                 </div>
@@ -35,7 +35,7 @@ const Hero = () => (
             <h1 className="herotitle">
             <span className="herotitle">Masterclass</span>
           </h1> 
-          <p className="herotextred">Break into web3. Or teach your own course.</p>
+          <p className="herotextred">Break into web technology.</p>
           <br></br>
           <Link href="/masterclass" style={{ textDecoration: 'none'}} className="button">Learn</Link>
           </div>
@@ -49,12 +49,12 @@ const Hero = () => (
         <div className="heroinformation">
             <div className='float-child'>
             <h1 className="herotitle">
-            <span className="herotitle">Jobs</span>
+            <span className="herotitle">Voyage</span>
           </h1>
-          <p className="herotextred">Find or post working opportunities</p>
+          <p className="herotextred">Gather with early explorers.</p>
           <br></br>
           
-          <Link href="/jobs" style={{ textDecoration: 'none'}} className="button">Earn</Link>
+          <Link href="/jobs" style={{ textDecoration: 'none'}} className="button">Begin</Link>
           </div>
           <div className='float-child-image'>
           <Image src='/jobs.png' alt="Post a Job" className="images" width='800px' height='500px'/>
