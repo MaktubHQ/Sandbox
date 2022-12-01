@@ -29,13 +29,13 @@ const DeJobs = () => {
           className={activeTab === "tab1" ? "active" : "passive"}
           onClick={handleTab1}
         >
-          Idle Quests
+          Open Voyages
         </li>
         <li
           className={activeTab === "tab2" ? "active" : "passive"}
           onClick={handleTab2}
         >
-          Post a Quest
+          Start a Voyage
         </li>
       </ul>
  
