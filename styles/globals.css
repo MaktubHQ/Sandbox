@@ -866,3 +866,6 @@ nav a:active{
 .footertext{
   text-decoration: none;
 }
+a{
+  text-decoration: none;
+}
