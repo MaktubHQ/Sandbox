@@ -15,7 +15,7 @@ const Footer = () => {
   target="_blank"
   rel="noopener noreferrer"
 >
-  Copyright 2022 © Made with ❤️ by Maktub Labs{' '}
+  Join our Discord © Made with ❤️ by Maktub Labs{' '}
 </a>
 </footer>
         
