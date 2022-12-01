@@ -26,7 +26,7 @@ const StartFundraise = () => {
   const { data: session } = useSession()
 
 {/* This function checks if a user is signed in to access writing data to our DB with actions(Post Job or Apply to Job). */}
-  if (!publicKey) return <div>Please connect your wallet for donations to go into. <ConnectWallet/></div>
+  if (!publicKey) return <div>Please connect the wallet you want donations to go into. <ConnectWallet/></div>
   
 
   {/* This function handles submitting a job form details to our DB.*/}
@@ -93,13 +93,13 @@ const StartFundraise = () => {
 
       <div className="main">
         
-        <label htmlFor="title"> Title: </label>
+        <label htmlFor="title"> Campaign Title: </label>
         <input id="title" type="text" name="title" required/>
 
-        <label htmlFor="goal"> Goal: </label>
+        <label htmlFor="goal"> Describe Goal: </label>
         <input id="goal" type="text" name="goal" required/>
 
-        <label htmlFor="usecase"> Use Case: </label>
+        <label htmlFor="usecase"> Use Case of Scholarship: </label>
         <input id="usecase" type="text" name="usecase" />
         <br></br>
         <hr></hr>
@@ -123,10 +123,8 @@ const StartFundraise = () => {
         <label htmlFor="twitter"> Twitter: </label>
         <input id="twitter" type="text" name="twitter" />
 
-        <label htmlFor="icon"> Icon: </label>
-        <input id="icon" type="text" name="icon" />
-
-
+        {/* <label htmlFor="icon"> Icon: </label>
+        <input id="icon" type="text" name="icon" /> */}
         <br></br>
         <hr></hr>
 
@@ -136,7 +134,7 @@ const StartFundraise = () => {
       <hr></hr>
       <br></br>
 
-      <button type="submit" className="postbutton">Post Campaign</button>
+      <button type="submit" className="postbutton">Open Campaign for Scholarship</button>
     </form>
   )
 }
@@ -155,7 +153,7 @@ const StartFundraise = () => {
   
           <Modal.Body>
             <p>
-            Keep an eye on * My Fundraise Campaigns * tab in your profile for progress status.
+            Keep an eye on Scholarship Campaigns in your profile for updates to campaign.
             </p>
              </Modal.Body>
   
@@ -183,7 +181,7 @@ const StartFundraise = () => {
         justifyContent: "center", textAlign: "center"
       }}>
         <div>
-          <h1>Start a Fundraise</h1>
+          <h1>Open a Campaign for Scholarship</h1>
         </div>
         <br></br>
         <hr></hr>

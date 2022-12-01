@@ -32,9 +32,9 @@ const Navbars = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" >
-            <Nav.Link href="/masterclass" className="links">Masterclass</Nav.Link>
+            <Nav.Link href="/library" className="links">Library</Nav.Link>
             <Nav.Link href="/voyage" className="links">Voyage</Nav.Link>
-            <Nav.Link href="/fundraise" className="links">Fundraise</Nav.Link> 
+            <Nav.Link href="/scholarships" className="links">Scholarships</Nav.Link> 
           </Nav>
 
           <Nav.Item >
@@ -72,11 +72,10 @@ const Navbars = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" >
-            <Nav.Link href="/masterclass" className="links">Masterclass</Nav.Link>
-            <Nav.Link href="/jobs" className="links">Jobs</Nav.Link>
-            <Nav.Link href="/fundraise" className="links">Fundraise</Nav.Link> 
-            <Nav.Link href="/profile" className="links">Profile</Nav.Link>
-            <Nav.Link href="/tipbox" className="links">Tipbox</Nav.Link> 
+            <Nav.Link href="/library" className="links">Library</Nav.Link>
+            <Nav.Link href="/voyage" className="links">Voyage</Nav.Link>
+            <Nav.Link href="/scholarships" className="links">Scholarships</Nav.Link> 
+            <Nav.Link href="/profile" className="links">{session.user.email}</Nav.Link>
           </Nav>
 
           <Nav.Item >

@@ -132,6 +132,28 @@ console.log(data)
 
           <hr></hr>
 
+
+          <div className="appsSent">
+<h3>Accepted Voyages!</h3>
+<Row xs={1} md={4} className="g-4">
+      {Array.from({ length: appsSent.length }).map((_, idx) => (
+        // eslint-disable-next-line react/jsx-key
+        <Col>
+          <Card>
+           
+            <Card.Body>
+              <Card.Title>{appsSent[idx].jobTitle}</Card.Title>
+              <Card.Text>
+              Employer Email: {appsSent[idx].ownerEmail ? appsSent[idx].ownerEmail : "--"}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+</div>
+<hr></hr>
+
 <div className="appsSent">
 <h3>Applications Sent!</h3>
 <Row xs={1} md={4} className="g-4">

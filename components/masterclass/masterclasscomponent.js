@@ -24,12 +24,12 @@ const MasterClasses = () => {
     return (
       <div>
         <br></br>
-      <h5 className="edutitle">Welcome to Masterclass!</h5>
+      <h5 className="edutitle">Welcome to our Library!</h5>
       <div className="Tabs">
         {/* This function uses React Cards and fills with DB data. */}
 
         {console.log(data)}
-      <h6 className="hottestcourses">Web3!</h6>
+      <h6 className="hottestcourses">Web Technology!</h6>
       <Row xs={1} md={4} className="g-4">
       {Array.from({ length: data.data.length }).map((_, idx) => (
         // eslint-disable-next-line react/jsx-key

@@ -128,7 +128,7 @@ const ApplyModal = () => {
 
   return( 
     <Modal show = { applyshow } onHide= {applyhandleClose}>
-<div><p>Please sign in to apply :)</p><Login/></div>
+<div><p>Please sign in to join Voyages</p><Login/></div>
     </Modal>
   )
   }
@@ -138,7 +138,7 @@ const ApplyModal = () => {
 
     <Modal.Header closeButton>
 
-      <Modal.Title>{applymodalInfo.role} Application</Modal.Title>
+      <Modal.Title>{applymodalInfo.role} Join Voyage</Modal.Title>
 
       <Modal.Body>
 
@@ -214,7 +214,7 @@ const ModalConfirm = () => {
 
         <Modal.Body>
           <p>
-          Keep an eye on your contact informations provided for more details.
+          Keep an eye on your profile for accepted voyages.
           </p>
            </Modal.Body>
 

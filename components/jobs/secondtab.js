@@ -90,11 +90,11 @@ const JobListingForm = () => {
       <input type="hidden" id="wallet" name="wallet" value={publicKey && publicKey.toString()} />
       <input type="hidden" id="email"  name="email" value={session && session.user.email}/>
 
-      <label htmlFor="project"> Organization: </label>
+      <label htmlFor="project"> Voyage Name: </label>
         <input id="project" type="text" name="project" />
       <br></br>
 <hr></hr>
-      <label htmlFor="title">Job Title: * </label>
+      <label htmlFor="title">Recruit Title: * </label>
       <input
         id="title"
         name="title"
@@ -139,13 +139,13 @@ const JobListingForm = () => {
 
 
       <div className="jobinfo">
-        <label htmlFor="budget">Budget: * </label>
+        <label htmlFor="budget">$Budget: * </label>
         <input id="budget" type="text" name="budget" required />
         <br></br>
 
         <hr></hr>
 
-        <label htmlFor="message">Job Description: * </label>
+        <label htmlFor="message">Role Description: * </label>
         <textarea id="jobdescription" name="jobdescription" required></textarea>
 
 
@@ -156,7 +156,7 @@ const JobListingForm = () => {
       <br></br>
 
 
-      <button type="submit" className="postbutton">Post Job</button>
+      <button type="submit" className="postbutton">Begin Voyage</button>
     </form>
   )
 }
@@ -170,12 +170,12 @@ const JobListingForm = () => {
   
         <Modal.Header confirmcloseButton>
   
-          <Modal.Title>Your job was successfully uploaded!</Modal.Title>
+          <Modal.Title>Your Voyage was successfully uploaded!</Modal.Title>
           <hr></hr>
   
           <Modal.Body>
             <p>
-            Keep an eye on * My Applications * tab in your profile for applications to your job.
+            Keep an eye on Applications in your profile for applications to join this Voyage.
             </p>
              </Modal.Body>
   
@@ -203,7 +203,7 @@ const JobListingForm = () => {
         justifyContent: "center", textAlign: "center"
       }}>
         <div>
-          <h1>Post a Job Listing</h1>
+          <h1>Post a Voyage</h1>
         </div>
         <br></br>
         <hr></hr>
