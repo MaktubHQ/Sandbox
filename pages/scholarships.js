@@ -32,13 +32,13 @@ const Fundraise = () => {
           className={activeTab === "tab1" ? "active" : "passive"}
           onClick={handleTab1}
         >
-          Sponsor
+          Support a scholar!
         </li>
         <li
           className={activeTab === "tab2" ? "active" : "passive"}
           onClick={handleTab2}
         >
-          Find a sponsor
+          Open a campaign for a scholarship!
         </li>
       </ul>
  

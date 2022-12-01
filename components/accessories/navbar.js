@@ -75,7 +75,7 @@ const Navbars = () => {
             <Nav.Link href="/library" className="links">Library</Nav.Link>
             <Nav.Link href="/voyage" className="links">Voyage</Nav.Link>
             <Nav.Link href="/scholarships" className="links">Scholarships</Nav.Link> 
-            <Nav.Link href="/profile" className="links">{session.user.email}</Nav.Link>
+            <Nav.Link href="/profile" className="links">HUB</Nav.Link>
           </Nav>
 
           <Nav.Item >
