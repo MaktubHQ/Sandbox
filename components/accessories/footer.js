@@ -14,6 +14,7 @@ const Footer = () => {
   href={DISCORD_LINK}
   target="_blank"
   rel="noopener noreferrer"
+  className='footertext'
 >
   Join our Discord © Made with ❤️ by Maktub Labs{' '}
 </a>

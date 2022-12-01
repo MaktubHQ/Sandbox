@@ -863,3 +863,6 @@ nav a:active{
 .courseName{
   text-align: center;
 }
+.footertext{
+  text-decoration: none;
+}
