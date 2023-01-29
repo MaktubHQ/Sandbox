@@ -224,7 +224,7 @@ footer {
   text-align: center;
   padding: 30px 0;
   margin-top: 60px;
-  color: #777;
+  color: white;
   border-top: 1px solid #eaeaea;
 }
 
@@ -442,11 +442,11 @@ ul.nav li:nth-child(2) {
 }
 ul.nav li:hover {
   background: -webkit-linear-gradient(left,#deaf74, #b3533d);
-  color: black;
+  color: blueviolet;
 }
 ul.nav li.active {
   background: -webkit-linear-gradient(left,#deaf74, #b3533d);
-  color: black;
+  color: blueviolet;
 }
 
 li.passive {
@@ -479,7 +479,7 @@ li.passive {
 }
 
 .footer-text{
-  color: black;
+  color: white;
 }
 
 a:hover{
@@ -863,9 +863,9 @@ nav a:active{
 .courseName{
   text-align: center;
 }
-.footertext{
+/* .footertext{
   text-decoration: none;
-}
+} */
 a{
   text-decoration: none;
 }
@@ -923,4 +923,10 @@ input[type="url"]:focus {
 }
 .Makollo{
   background-color: transparent;
+}
+.linksv2{
+  color: white;
+}
+.makollotitle{
+  color: black;
 }

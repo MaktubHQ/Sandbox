@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Footer from '../components/accessories/footer'
-import Navbars from '../components/accessories/navbar'
+import Navbarsv2 from '../components/accessories/navbarv2'
 import styles from '../styles/Home.module.css'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -16,7 +16,7 @@ const Makollo = () => {
     return ( 
         <div className={styles.container}>
 
-      <Navbars />
+      <Navbarsv2 />
      <MakolloComponent/>
       <Footer />
 
