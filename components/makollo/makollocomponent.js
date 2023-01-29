@@ -28,8 +28,9 @@ if (!data) return <div>Magic is loading...</div>
     <div className="Makollo">
         <hr></hr>
         <br></br>
-    <h3 className="edutitle">Share a personal project you are proud of!</h3>
+    
     <form id="form">
+    <h3 className="edutitle">Share a personal project you are proud of!</h3>
   <div className="form-group">
     <label htmlFor="email">Email</label>
     <input type="email" className="form-control" id="email" placeholder="maktub@gmail.com" required/>
