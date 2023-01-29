@@ -828,6 +828,7 @@ nav a:active{
   .nav-item{
     display: flex;
     width: 30%;
+    color: white;
   }
 }
 

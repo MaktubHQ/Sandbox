@@ -73,7 +73,7 @@ const handleSubmit = async (event) => {
     <form 
     id="form" 
     onSubmit={handleSubmit} >
-    <h3 className="makollotitle">Share a personal project you are proud of!</h3>
+    <h3 className="makollotitle">Anonymous project feedback! Share something you are currently proud of ...</h3>
   <div className="form-group">
     <label htmlFor="email">Email</label>
     <input type="email" className="form-control" id="email" placeholder="maktub@gmail.com" required/>
