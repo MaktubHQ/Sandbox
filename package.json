@@ -21,7 +21,7 @@
     "mongodb": "^4.6.0",
     "mongoose": "^6.4.6",
     "next": "12.1.6",
-    "next-auth": "^4.10.3",
+    "next-auth": "^4.19.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-bootstrap-table-next": "^1.1.0",

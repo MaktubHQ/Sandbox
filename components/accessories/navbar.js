@@ -34,7 +34,8 @@ const Navbars = () => {
           <Nav className="me-auto" >
             <Nav.Link href="/library" className="links">Library</Nav.Link>
             <Nav.Link href="/voyage" className="links">Voyage</Nav.Link>
-            <Nav.Link href="/scholarships" className="links">Scholarships</Nav.Link> 
+            <Nav.Link href="/scholarships" className="links">Scholarships</Nav.Link>
+            <Nav.Link href="/makollo" className="links">Makollo</Nav.Link> 
           </Nav>
 
           <Nav.Item >
@@ -74,7 +75,8 @@ const Navbars = () => {
           <Nav className="me-auto" >
             <Nav.Link href="/library" className="links">Library</Nav.Link>
             <Nav.Link href="/voyage" className="links">Voyage</Nav.Link>
-            <Nav.Link href="/scholarships" className="links">Scholarships</Nav.Link> 
+            <Nav.Link href="/scholarships" className="links">Scholarships</Nav.Link>
+            <Nav.Link href="/makollo" className="links">Makollo</Nav.Link> 
             <Nav.Link href="/profile" className="links">HUB</Nav.Link>
           </Nav>
 

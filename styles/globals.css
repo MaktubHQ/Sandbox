@@ -869,3 +869,58 @@ nav a:active{
 a{
   text-decoration: none;
 }
+body {
+  background-image: url('https://github.com/MaktubHQ/Sandbox/blob/main/public/Hotpot.png?raw=true');
+  background-size: cover;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+#form {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+label {
+  font-weight: bold;
+  color: black;
+  padding: 10px;
+}
+
+input[type="email"],
+input[type="url"] {
+  padding: 12px 20px;
+  border: solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #555;
+}
+
+input[type="email"]:focus,
+input[type="url"]:focus {
+  border-color: black;
+  outline: solid;
+}
+
+.btn-primary {
+  background-color: black;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #2779bd;
+}
+.Makollo{
+  background-color: transparent;
+}
